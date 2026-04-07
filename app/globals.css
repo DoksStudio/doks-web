@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Properties ───────────────────────────────────── */
+:root {
+  --color-obsidian: #0A0A0A;
+  --color-chalk: #F5F3EE;
+  --color-sand: #C9B99A;
+  --color-stone: #8A8078;
+  --color-charcoal: #1C1C1C;
+  --color-warm-gray: #6B6560;
+  --color-light-stone: #E8E4DD;
+
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  --transition-base: 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-reveal: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Base Reset ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-chalk);
+  color: var(--color-obsidian);
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Selection ───────────────────────────────────────────── */
+::selection {
+  background: var(--color-obsidian);
+  color: var(--color-chalk);
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-chalk); }
+::-webkit-scrollbar-thumb { background: var(--color-stone); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-obsidian); }
+
+/* ─── Typography Utilities ────────────────────────────────── */
+.font-editorial {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.tracking-editorial {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+}
+
+/* ─── Image Utilities ─────────────────────────────────────── */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ─── Reveal Animations ───────────────────────────────────── */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-image {
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-image.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Hover Overlays ──────────────────────────────────────── */
+.category-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.85) 0%,
+    rgba(10, 10, 10, 0.3) 50%,
+    rgba(10, 10, 10, 0.1) 100%
+  );
+  opacity: 0.6;
+  transition: opacity 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.category-card:hover .card-overlay {
+  opacity: 0.85;
+}
+
+.category-card .card-image {
+  transition: transform 800ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+.category-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+.category-card .card-label {
+  transform: translateY(0.5rem);
+  opacity: 0.8;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover .card-label {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.category-card .card-arrow {
+  transform: translateX(-0.5rem);
+  opacity: 0;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1) 50ms,
+              opacity 500ms cubic-bezier(0.16, 1, 0.3, 1) 50ms;
+}
+
+.category-card:hover .card-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ─── Product Card ────────────────────────────────────────── */
+.product-card-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-image-wrap .img-secondary {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.product-card-image-wrap:hover .img-secondary {
+  opacity: 1;
+}
+
+.product-card-image-wrap .img-primary {
+  transition: opacity 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.product-card-image-wrap:hover .img-primary {
+  opacity: 0;
+}
+
+/* ─── Navigation ──────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ─── Size Selector ───────────────────────────────────────── */
+.size-btn {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #E8E4DD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  transition: all 300ms ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.size-btn:hover {
+  border-color: var(--color-obsidian);
+  background: var(--color-obsidian);
+  color: var(--color-chalk);
+}
+
+.size-btn.active {
+  border-color: var(--color-obsidian);
+  background: var(--color-obsidian);
+  color: var(--color-chalk);
+}
+
+.size-btn.unavailable {
+  opacity: 0.3;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ─── Accordion ───────────────────────────────────────────── */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-content.open {
+  max-height: 400px;
+}
+
+/* ─── Lookbook ────────────────────────────────────────────── */
+.lookbook-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* ─── Grain Texture Overlay ───────────────────────────────── */
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* ─── Horizontal Marquee ──────────────────────────────────── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Button Styles ───────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: var(--color-obsidian);
+  color: var(--color-chalk);
+  font-family: var(--font-inter);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-obsidian);
+  transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-obsidian);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--color-chalk);
+  font-family: var(--font-inter);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(245, 243, 238, 0.4);
+  transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--color-chalk);
+  color: var(--color-obsidian);
+  border-color: var(--color-chalk);
+}
+
+/* ─── Input Styles ────────────────────────────────────────── */
+.input-minimal {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-stone);
+  padding: 0.75rem 0;
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: var(--color-chalk);
+  outline: none;
+  width: 100%;
+  transition: border-color 300ms ease;
+}
+
+.input-minimal::placeholder {
+  color: rgba(245, 243, 238, 0.4);
+  letter-spacing: 0.1em;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+}
+
+.input-minimal:focus {
+  border-bottom-color: var(--color-chalk);
+}
+
+/* ─── Hero Text Animation Delays ─────────────────────────── */
+.delay-200 { animation-delay: 200ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-1000 { animation-delay: 1000ms; }
+.delay-1200 { animation-delay: 1200ms; }
+
+/* ─── Stagger Delays for Lists ───────────────────────────── */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
+
+/* ─── Ease Utilities (Tailwind arbitrary not supported here) ── */
+.ease-luxury { transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+.ease-reveal  { transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* ─── Hide native cursor on pointer devices (custom cursor) ── */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+/* ─── Border / opacity utility ───────────────────────────── */
+.border-chalk\/8  { border-color: rgba(245,243,238,0.08); }
+
