@@ -7,21 +7,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navigation() {
   const { lang, toggleLang, t } = useLanguage();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 60);
-      setHidden(y > lastScrollY.current && y > 200);
-      lastScrollY.current = y;
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -37,18 +24,13 @@ export default function Navigation() {
     { label: t.nav.stores, href: "/stores" },
   ];
 
-  const isLight = !scrolled;
-  const textColor = isLight ? "text-chalk" : "text-obsidian";
-  const navBg = scrolled
-    ? "bg-chalk/96 backdrop-blur-md shadow-[0_1px_0_0_rgba(10,10,10,0.07)]"
-    : "bg-transparent";
+  const textColor = "text-obsidian";
+  const navBg = "bg-chalk shadow-[0_1px_0_0_rgba(10,10,10,0.08)]";
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-luxury ${navBg} ${
-          hidden ? "-translate-y-full" : "translate-y-0"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-luxury ${navBg} translate-y-0`}
       >
         <nav className="flex items-center px-6 md:px-10 lg:px-16 h-16 md:h-20">
 

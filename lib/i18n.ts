@@ -12,9 +12,9 @@ export const translations = {
       newArrivals: "Новости",
     },
     hero: {
-      eyebrow: "София, България — Основана 1993",
-      line1: "Безвременно",
-      line2: "Мъжко Облекло",
+      eyebrow: "София, България — Основана 1994",
+      line1: "",
+      line2: "Мъжка мода",
       subtitle:
         "Изградено върху 31 години занаят. Проектирано за съвременния мъж, който знае, че облеклото е изявление на намерение.",
       cta: "Разгледай Колекцията",
@@ -31,6 +31,7 @@ export const translations = {
       jackets: { label: "Сака", sub: "Спортно и Официално", desc: "От блейзъри до палта" },
       smartCasual: { label: "Смарт Кежуъл", sub: "Изискана Лекота", desc: "Панталони, пуловери, ризи" },
       accessories: { label: "Аксесоари", sub: "Детайлите", desc: "Вратовръзки, кърпички, колани" },
+      sale: { label: "Намалени артикули", sub: "Специални цени", desc: "Ограничени количества" },
     },
     story: {
       eyebrow: "Нашето наследство",
@@ -165,8 +166,8 @@ export const translations = {
       newArrivals: "New Arrivals",
     },
     hero: {
-      eyebrow: "Sofia, Bulgaria — Est. 1993",
-      line1: "Timeless",
+      eyebrow: "Sofia, Bulgaria — Est. 1994",
+      line1: "",
       line2: "Menswear",
       subtitle:
         "Built on 31 years of craft. Designed for the modern man who understands that clothes are a statement of intent.",
@@ -184,6 +185,7 @@ export const translations = {
       jackets: { label: "Jackets", sub: "Sport & Formal", desc: "From blazers to overcoats" },
       smartCasual: { label: "Smart Casual", sub: "Refined Ease", desc: "Trousers, knitwear, shirts" },
       accessories: { label: "Accessories", sub: "The Details", desc: "Ties, pocket squares, belts" },
+      sale: { label: "Sale", sub: "Special Prices", desc: "Limited quantities" },
     },
     story: {
       eyebrow: "Our Heritage",

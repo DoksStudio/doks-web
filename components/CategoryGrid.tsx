@@ -11,6 +11,7 @@ const categoryImages = {
   jackets: "/cat-jackets.jpg",
   smartCasual: "/cat-smart-casual.jpg",
   accessories: "/cat-accessories.jpg",
+  sale: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
 };
 
 export default function CategoryGrid() {
@@ -22,6 +23,7 @@ export default function CategoryGrid() {
     { id: "jackets", ...t.categories.jackets, href: "/collection/jackets", image: categoryImages.jackets, col: "lg:col-span-1" },
     { id: "smartCasual", ...t.categories.smartCasual, href: "/collection/smart-casual", image: categoryImages.smartCasual, col: "lg:col-span-1" },
     { id: "accessories", ...t.categories.accessories, href: "/collection/accessories", image: categoryImages.accessories, col: "lg:col-span-1" },
+    { id: "sale", ...t.categories.sale, href: "/collection/sale", image: categoryImages.sale, col: "lg:col-span-1" },
   ];
 
   useEffect(() => {
@@ -92,11 +94,17 @@ export default function CategoryGrid() {
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
-                  {/* Number */}
+                  {/* Number / Sale badge */}
                   <div className="self-end">
-                    <span className="font-serif text-chalk/20 font-light text-5xl leading-none">
-                      0{i + 1}
-                    </span>
+                    {cat.id === "sale" ? (
+                      <span className="tracking-editorial text-[0.55rem] font-sans font-medium bg-red-600 text-chalk px-3 py-1.5">
+                        SALE
+                      </span>
+                    ) : (
+                      <span className="font-serif text-chalk/20 font-light text-5xl leading-none">
+                        0{i + 1}
+                      </span>
+                    )}
                   </div>
 
                   {/* Label */}

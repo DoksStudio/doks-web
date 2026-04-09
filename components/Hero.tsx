@@ -71,22 +71,6 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Headline — line 1 */}
-          <div className="overflow-hidden mb-1 md:mb-2">
-            <h1
-              className={`font-serif font-light text-chalk leading-[0.87] transition-all duration-[1300ms] ease-reveal ${
-                loaded ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-              }`}
-              style={{
-                fontSize: "clamp(3.8rem, 10vw, 10.5rem)",
-                letterSpacing: "-0.03em",
-                transitionDelay: "450ms",
-              }}
-            >
-              {t.hero.line1}
-            </h1>
-          </div>
-
           {/* Headline — line 2 */}
           <div className="overflow-hidden mb-10 md:mb-14">
             <h1
