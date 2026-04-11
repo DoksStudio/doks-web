@@ -10,6 +10,7 @@ export const translations = {
       about: "За нас",
       stores: "Магазини",
       newArrivals: "Новости",
+      sale: "Sale",
     },
     hero: {
       eyebrow: "София, България — Основана 1994",
@@ -164,6 +165,7 @@ export const translations = {
       about: "About",
       stores: "Stores",
       newArrivals: "New Arrivals",
+      sale: "Sale",
     },
     hero: {
       eyebrow: "Sofia, Bulgaria — Est. 1994",

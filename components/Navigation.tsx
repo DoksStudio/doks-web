@@ -2,30 +2,48 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navigation() {
   const { lang, toggleLang, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!isHome) return;
+    const handleScroll = () => {
+      setScrolled(window.scrollY > window.innerHeight - 80);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
+
   const navLinks = [
     { label: t.nav.collection, href: "/collection" },
     { label: t.nav.suits, href: "/collection/suits" },
-    { label: t.nav.jackets, href: "/collection/jackets" },
     { label: t.nav.smartCasual, href: "/collection/smart-casual" },
+    { label: t.nav.jackets, href: "/collection/jackets" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.stores, href: "/stores" },
+    { label: t.nav.sale, href: "/collection/sale", sale: true },
   ];
 
-  const textColor = "text-obsidian";
-  const navBg = "bg-chalk shadow-[0_1px_0_0_rgba(10,10,10,0.08)]";
+  const transparent = isHome && !scrolled;
+  const textColor = transparent ? "text-chalk" : "text-obsidian";
+  const navBg = transparent
+    ? "bg-white/5 backdrop-blur-md"
+    : "bg-chalk shadow-[0_1px_0_0_rgba(10,10,10,0.08)]";
 
   return (
     <>
@@ -40,7 +58,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${textColor}`}
+                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
               >
                 {link.label}
               </Link>
@@ -72,7 +90,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${textColor}`}
+                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
               >
                 {link.label}
               </Link>
@@ -144,7 +162,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-serif text-chalk font-light italic py-3 border-b border-chalk/8 hover:opacity-50 transition-all duration-300"
+                className={`font-serif font-light italic py-3 border-b border-chalk/8 hover:opacity-50 transition-all duration-300 ${"sale" in link && link.sale ? "text-red-400" : "text-chalk"}`}
                 style={{
                   fontSize: "clamp(2rem, 8vw, 3rem)",
                   transitionDelay: menuOpen ? `${i * 60 + 150}ms` : "0ms",
