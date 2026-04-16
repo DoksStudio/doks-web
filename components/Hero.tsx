@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-store.jpg"
+          src="/Web Photos/Photo4.jpg"
           alt="Doks Studio"
           fill
           priority

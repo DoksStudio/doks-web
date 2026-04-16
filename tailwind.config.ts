@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#0A0A0A",
-        chalk: "#F5F3EE",
-        sand: "#C9B99A",
+        obsidian: "#2D2D2D",
+        chalk: "#EAE0D2",
+        sand: "#A68763",
         stone: "#8A8078",
         charcoal: "#1C1C1C",
-        "warm-gray": "#6B6560",
-        "light-stone": "#E8E4DD",
+        "warm-gray": "#A68763",
+        "light-stone": "#D7C9AE",
+        "akaroa": "#D7C9AE",
+        "barley": "#A68763",
+        "white-rock": "#EAE0D2",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],

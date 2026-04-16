@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
@@ -16,9 +16,9 @@ const cormorant = Cormorant_Garamond({
   preload: true,
 });
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
   display: "block",
   preload: true,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bg" className={`${cormorant.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="bg" className={`${cormorant.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body className="bg-chalk text-obsidian antialiased cursor-none">
         <LanguageProvider>
           <Preloader />

@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const lookbookImages = [
-  "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1800&q=85",
-  "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1800&q=85",
+  "/Web Photos/Photo12.jpg",
+  "/Web Photos/Photo9.jpg",
 ];
 const lookbookHrefs = ["/collection/suits", "/collection/smart-casual"];
 

@@ -80,7 +80,7 @@ export default function BrandStory() {
         <div className="relative h-[65vw] md:h-[540px] lg:h-auto order-2 lg:order-1 overflow-hidden">
           <div className="reveal-image h-full w-full">
             <Image
-              src="/brand-story.jpg"
+              src="/Web Photos/Photo10.jpg"
               alt="Докс Студио — занаят"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

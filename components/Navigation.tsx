@@ -68,19 +68,13 @@ export default function Navigation() {
           {/* Center — Logo */}
           <Link
             href="/"
-            className={`absolute left-1/2 -translate-x-1/2 flex flex-col items-center transition-colors duration-300 group ${textColor}`}
+            className={`absolute left-1/2 -translate-x-1/2 flex items-center transition-colors duration-300 group ${textColor}`}
           >
             <span
-              className="font-serif font-light tracking-[0.28em] uppercase leading-none"
-              style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)" }}
+              className="font-sans font-medium tracking-[0.22em] uppercase leading-none"
+              style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.1rem)" }}
             >
-              DOKS
-            </span>
-            <span
-              className={`tracking-[0.5em] font-sans font-medium uppercase mt-[3px] transition-opacity duration-300 opacity-60 group-hover:opacity-100`}
-              style={{ fontSize: "0.42rem", letterSpacing: "0.5em" }}
-            >
-              STUDIO
+              ДОКС СТУДИО
             </span>
           </Link>
 
@@ -146,9 +140,8 @@ export default function Navigation() {
         <div className="flex flex-col h-full px-8 py-8 overflow-y-auto">
           {/* Top bar */}
           <div className="flex justify-between items-center mb-14">
-            <Link href="/" onClick={() => setMenuOpen(false)} className="flex flex-col">
-              <span className="font-serif text-chalk text-xl tracking-[0.28em] uppercase font-light">DOKS</span>
-              <span className="tracking-[0.5em] text-[0.42rem] font-sans font-medium uppercase text-chalk/40 mt-[3px]">STUDIO</span>
+            <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center">
+              <span className="font-sans text-chalk font-medium tracking-[0.22em] uppercase text-base">ДОКС СТУДИО</span>
             </Link>
             <button onClick={() => setMenuOpen(false)} className="text-chalk p-1 hover:opacity-50 transition-opacity">
               <X size={20} strokeWidth={1.5} />

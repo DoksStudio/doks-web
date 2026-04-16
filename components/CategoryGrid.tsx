@@ -7,11 +7,11 @@ import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const categoryImages = {
-  suits: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=85",
-  jackets: "/cat-jackets.jpg",
-  smartCasual: "/cat-smart-casual.jpg",
-  accessories: "/cat-accessories.jpg",
-  sale: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
+  suits: "/Web Photos/Photo3.jpg",
+  jackets: "/Web Photos/Photo2.jpg",
+  smartCasual: "/Web Photos/Photo6.jpg",
+  accessories: "/Web Photos/Photo7.jpg",
+  sale: "/Web Photos/Photo8.jpg",
 };
 
 export default function CategoryGrid() {

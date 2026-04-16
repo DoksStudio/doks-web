@@ -44,16 +44,10 @@ export default function Preloader() {
         }`}
       >
         <span
-          className="font-serif text-chalk font-light tracking-[0.3em] uppercase block"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", letterSpacing: "0.4em" }}
+          className="font-sans text-chalk font-medium tracking-[0.3em] uppercase block"
+          style={{ fontSize: "clamp(1.5rem, 5vw, 3.5rem)" }}
         >
-          DOKS
-        </span>
-        <span
-          className="font-sans font-light text-chalk/40 tracking-[0.7em] uppercase block mt-1"
-          style={{ fontSize: "clamp(0.5rem, 1.5vw, 0.75rem)" }}
-        >
-          STUDIO
+          ДОКС СТУДИО
         </span>
 
         {/* Animated line */}
