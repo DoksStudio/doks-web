@@ -5,10 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SearchOverlay from "@/components/SearchOverlay";
 
 export default function Navigation() {
   const { lang, toggleLang, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
@@ -101,7 +103,7 @@ export default function Navigation() {
               <span className={lang === "en" ? "opacity-100" : "opacity-40 group-hover:opacity-70"}>EN</span>
             </button>
 
-            <button aria-label="Search" className={`p-1 hover:opacity-50 transition-opacity ${textColor}`}>
+            <button aria-label="Search" onClick={() => setSearchOpen(true)} className={`p-1 hover:opacity-50 transition-opacity ${textColor}`}>
               <Search size={15} strokeWidth={1.5} />
             </button>
             <Link href="/cart" aria-label="Cart" className={`relative p-1 hover:opacity-50 transition-opacity ${textColor}`}>
@@ -186,6 +188,8 @@ export default function Navigation() {
           </div>
         </div>
       </div>
+
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }
