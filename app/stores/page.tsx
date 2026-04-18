@@ -190,35 +190,59 @@ export default function StoresPage() {
 
   return (
     <div className="bg-chalk min-h-screen">
-      {/* Hero */}
-      <div className="pt-24 md:pt-32 pb-16 md:pb-20 px-6 md:px-10 lg:px-16">
-        <p className="tracking-editorial text-stone text-[0.625rem] font-sans mb-5">
-          SOFIA, BULGARIA — 4 МАГАЗИНА
-        </p>
-        <h1
-          className="font-serif font-light text-obsidian leading-[1.05] mb-8"
-          style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", letterSpacing: "-0.025em" }}
-        >
-          НАШИТЕ
-          <br />
-          <span className="italic text-warm-gray">Магазини</span>
-        </h1>
+      {/* Editorial Hero */}
+      <div className="relative w-full h-[55vh] min-h-[380px] bg-obsidian overflow-hidden">
+        <Image
+          src="/Web Photos/Photo5.jpg"
+          alt="Докс Студио Магазини"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-obsidian/30" />
 
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-px bg-sand" />
-          <span className="tracking-editorial text-stone text-[0.6rem] font-sans">
-            SOFIA, БЪЛГАРИЯ
+        {/* Big background text */}
+        <span
+          className="absolute right-8 top-1/2 -translate-y-1/2 font-serif font-light text-chalk/5 leading-none select-none pointer-events-none hidden lg:block"
+          style={{ fontSize: "clamp(10rem, 22vw, 22rem)" }}
+        >
+          04
+        </span>
+
+        {/* Breadcrumb */}
+        <div className="absolute top-0 left-0 right-0 pt-24 px-6 md:px-10 lg:px-16">
+          <span className="tracking-editorial text-[0.575rem] text-chalk/50 font-sans">
+            SOFIA, BULGARIA — 4 МАГАЗИНА
           </span>
         </div>
 
-        <p className="font-sans text-stone text-sm leading-relaxed max-w-md font-light">
-          Посетете ни на място, усетете тъканите, намерете своята кройка.
-          Нашите консултанти са на ваше разположение.
-        </p>
+        {/* Title block */}
+        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 lg:px-16 pb-10 flex items-end justify-between">
+          <div>
+            <h1
+              className="font-serif font-light text-chalk leading-none"
+              style={{ fontSize: "clamp(3rem, 7vw, 7rem)", letterSpacing: "-0.025em" }}
+            >
+              НАШИТЕ
+              <br />
+              <span className="italic">Магазини</span>
+            </h1>
+            <p className="font-sans text-chalk/50 text-sm font-light max-w-sm leading-relaxed mt-3 hidden md:block">
+              Посетете ни на място, усетете тъканите, намерете своята кройка.
+            </p>
+          </div>
+          <div className="text-right hidden md:block">
+            <p className="font-serif font-light text-chalk/20 leading-none" style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
+              04
+            </p>
+            <p className="tracking-editorial text-chalk/30 text-[0.55rem] font-sans mt-1">МАГАЗИНА</p>
+          </div>
+        </div>
       </div>
 
       {/* Store grid */}
-      <section className="px-6 md:px-10 lg:px-16 pb-20 md:pb-28">
+      <section className="px-6 md:px-10 lg:px-16 pb-20 md:pb-28 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {stores.map((store, i) => (
             <StoreCard
@@ -233,7 +257,7 @@ export default function StoresPage() {
       </section>
 
       {/* Map section */}
-      <section className="px-6 md:px-10 lg:px-16 pb-28 md:pb-36">
+      <section className="px-6 md:px-10 lg:px-16 pb-28 md:pb-36 max-w-5xl mx-auto">
         <div className="mb-10 md:mb-12">
           <p className="tracking-editorial text-stone text-[0.625rem] font-sans mb-4">
             НА КАРТАТА
@@ -256,10 +280,6 @@ export default function StoresPage() {
           />
         </div>
 
-        <p className="mt-4 tracking-editorial text-stone/50 text-[0.55rem] font-sans">
-          Hover върху карта или магазин за интерактивност. За активиране на картата добавете{" "}
-          <code className="font-mono">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code> в <code className="font-mono">.env.local</code>
-        </p>
       </section>
     </div>
   );

@@ -154,6 +154,21 @@ export const translations = {
     preloader: {
       tagline: "Безвременно мъжко облекло",
     },
+    about: {
+      eyebrow: "SOFIA, BULGARIA — EST. 1994",
+      title1: "НЯКОИ НЕЩА НЕ",
+      title2: "ЗАПОЧВАТ ОТ ДНЕС",
+      divider: "SOFIA, BULGARIA — EST. 1994",
+      stat1num: "1994",
+      stat1label: "ГОДИНА НА ОСНОВАВАНЕ",
+      stat2num: "31+",
+      stat2label: "ГОДИНИ ОПИТ",
+      p1: "Докс студио е Дружество с ограничена отговорност основано през месец юни 1994 година в град София.",
+      p2: "Още тогава е ясна идеята която събира Учредителите — да се работи по изграждане на Фирма със собствено лице и собствен стил, специализирана изключително в разработка на модели, производство и продажби на мъжки облекла с класически силует, предназначени за активни делови мъже, за които изисканият външен вид е задължителен.",
+      p3: "Следват години на упорит труд и утвърждаване на фирменото лого ДОКС като марка синоним на оптимално добро съотношение между цена и качество.",
+      p4: "Във времето постоянно се разширява гамата от артикули с марка ДОКС — днес вече можете да я видите върху красиви и актуални вратовръзки, ризи ушити изключително от естествени материи – лен или памук, панталони от 100% вълна, бельо представено от няколко модела боксери и естествено гордостта на фирмата — отличните костюми изработени от най-високо качество вълна.",
+      p5: "Годините създават стилове, заменят тенденции, изграждат различни вкусове, но някои неща не се променят — за екипа на Докс студио това е убеждението, че най-добрата реклама е доволният клиент.",
+    },
   },
 
   en: {
@@ -308,6 +323,21 @@ export const translations = {
     },
     preloader: {
       tagline: "Timeless Menswear",
+    },
+    about: {
+      eyebrow: "SOFIA, BULGARIA — EST. 1994",
+      title1: "SOME THINGS DON'T",
+      title2: "START TODAY",
+      divider: "SOFIA, BULGARIA — EST. 1994",
+      stat1num: "1994",
+      stat1label: "YEAR FOUNDED",
+      stat2num: "31+",
+      stat2label: "YEARS OF EXPERIENCE",
+      p1: "Doks Studio is a limited liability company founded in June 1994 in Sofia, Bulgaria.",
+      p2: "From the very beginning, the idea that brought the founders together was clear — to build a company with its own identity and style, specialised exclusively in designing, manufacturing and selling men's clothing with a classic silhouette, intended for active business men for whom an impeccable appearance is essential.",
+      p3: "Years of hard work followed, establishing the DOKS brand as a synonym for an optimally good price-to-quality ratio.",
+      p4: "Over time, the range of DOKS-branded articles has constantly expanded — today you can find it on beautiful and contemporary ties, shirts made exclusively from natural materials such as linen or cotton, 100% wool trousers, underwear in several boxer models, and of course the company's pride — outstanding suits crafted from the highest quality wool.",
+      p5: "The years create styles, replace trends, and build different tastes, but some things don't change — for the Doks Studio team, that is the conviction that the best advertisement is a satisfied customer.",
     },
   },
 } as const;

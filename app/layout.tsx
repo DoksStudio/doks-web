@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
 
-const cormorant = Cormorant_Garamond({
+const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
@@ -16,9 +16,10 @@ const cormorant = Cormorant_Garamond({
   preload: true,
 });
 
-const montserrat = Montserrat({
+const montserratSans = Montserrat({
   subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-inter",
   display: "block",
   preload: true,
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bg" className={`${cormorant.variable} ${montserrat.variable}`} suppressHydrationWarning>
+    <html lang="bg" className={`${montserrat.variable} ${montserratSans.variable}`} suppressHydrationWarning>
       <body className="bg-chalk text-obsidian antialiased cursor-none">
         <LanguageProvider>
           <Preloader />

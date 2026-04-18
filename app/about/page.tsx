@@ -1,54 +1,45 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function AboutPage() {
+  const { t } = useLanguage();
+  const a = t.about;
+
   return (
     <div className="bg-chalk min-h-screen pt-24 md:pt-32 pb-24 md:pb-32">
-      <div className="px-6 md:px-10 lg:px-16 max-w-4xl">
+      <div className="px-6 md:px-10 lg:px-16 max-w-5xl mx-auto">
 
         {/* Заглавие */}
-        <h1
-          className="font-serif font-light text-obsidian leading-[1.05] mb-14 md:mb-20"
-          style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)", letterSpacing: "-0.025em" }}
-        >
-          НЯКОИ НЕЩА НЕ
-          <br />
-          <span className="italic text-warm-gray">ЗАПОЧВАТ ОТ ДНЕС</span>
-        </h1>
+        <div className="mb-14 md:mb-20">
+          <p className="tracking-editorial text-stone text-[0.625rem] font-sans mb-5">
+            {a.eyebrow}
+          </p>
+          <h1
+            className="font-serif font-light text-obsidian leading-[1.05]"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)", letterSpacing: "-0.025em" }}
+          >
+            {a.title1}
+            <br />
+            <span className="italic text-warm-gray">{a.title2}</span>
+          </h1>
+        </div>
 
         {/* Разделител */}
         <div className="flex items-center gap-4 mb-14 md:mb-20">
           <div className="w-12 h-px bg-sand" />
           <span className="tracking-editorial text-stone text-[0.6rem] font-sans">
-            SOFIA, BULGARIA — EST. 1994
+            {a.divider}
           </span>
         </div>
 
         {/* Текст */}
         <div className="space-y-8 font-sans text-obsidian/80 text-[1rem] md:text-[1.0625rem] leading-[1.9] font-light max-w-2xl">
-          <p>
-            „Докс студио" е Дружество с ограничена отговорност основано през месец юни 1994 година
-            в град София.
-          </p>
-          <p>
-            Още тогава е ясна идеята която събира Учредителите — да се работи по изграждане на
-            Фирма със собствено лице и собствен стил, специализирана изключително в разработка на
-            модели, производство и продажби на мъжки облекла с класически силует, предназначени за
-            активни делови мъже, за които изисканият външен вид е задължителен.
-          </p>
-          <p>
-            Следват години на упорит труд и утвърждаване на фирменото лого „ДОКС" като марка
-            синоним на оптимално добро съотношение между цена и качество.
-          </p>
-          <p>
-            Във времето постоянно се разширява гамата от артикули с марка „ДОКС" — днес вече
-            можете да я видите върху красиви и актуални вратовръзки, ризи ушити изключително от
-            естествени материи – лен или памук, панталони от 100% вълна, бельо представено от
-            няколко модела боксери и естествено гордостта на фирмата — отличните костюми изработени
-            от най-високо качество вълна.
-          </p>
-          <p>
-            Годините създават стилове, заменят тенденции, изграждат различни вкусове, но някои
-            неща не се променят — за екипа на „Докс студио" това е убеждението, че най-добрата
-            реклама е доволният клиент.
-          </p>
+          <p>{a.p1}</p>
+          <p>{a.p2}</p>
+          <p>{a.p3}</p>
+          <p>{a.p4}</p>
+          <p>{a.p5}</p>
         </div>
 
       </div>

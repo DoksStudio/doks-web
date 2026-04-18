@@ -26,7 +26,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className={`object-cover object-[30%_center] transition-all duration-[2200ms] ease-out ${
+          className={`object-cover object-[80%_center] md:object-[30%_center] transition-all duration-[2200ms] ease-out ${
             loaded ? "scale-100 opacity-100" : "scale-[1.06] opacity-0"
           }`}
           onLoad={() => setLoaded(true)}
