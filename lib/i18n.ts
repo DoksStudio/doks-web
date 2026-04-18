@@ -152,7 +152,7 @@ export const translations = {
       zoomHint: "Задръжте за zoom",
     },
     preloader: {
-      tagline: "Безвременно мъжко облекло",
+      tagline: "Някои неща не започват от днес",
     },
     about: {
       eyebrow: "SOFIA, BULGARIA — EST. 1994",
@@ -322,7 +322,7 @@ export const translations = {
       zoomHint: "Hover to zoom",
     },
     preloader: {
-      tagline: "Timeless Menswear",
+      tagline: "Some things don't start today",
     },
     about: {
       eyebrow: "SOFIA, BULGARIA — EST. 1994",
