@@ -160,7 +160,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`font-serif font-light italic py-3 border-b border-chalk/8 hover:opacity-50 transition-all duration-300 ${"sale" in link && link.sale ? "text-red-400" : "text-chalk"}`}
+                className={`font-serif font-light py-3 border-b border-chalk/8 hover:opacity-50 transition-all duration-300 ${"sale" in link && link.sale ? "text-red-400" : "text-chalk"}`}
                 style={{
                   fontSize: "clamp(2rem, 8vw, 3rem)",
                   transitionDelay: menuOpen ? `${i * 60 + 150}ms` : "0ms",

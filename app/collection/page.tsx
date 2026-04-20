@@ -73,7 +73,7 @@ export default function CollectionPage() {
           </div>
         ) : (
           <div className="py-32 text-center">
-            <p className="font-serif italic text-warm-gray text-xl">
+            <p className="font-serif text-warm-gray text-xl">
               {lang === "bg" ? "Няма намерени продукти." : "No products found."}
             </p>
           </div>

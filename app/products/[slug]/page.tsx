@@ -57,7 +57,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="min-h-screen bg-chalk flex items-center justify-center">
         <div className="text-center">
           <p className="tracking-editorial text-stone text-[0.625rem] font-sans mb-4">404</p>
-          <h1 className="font-serif text-obsidian text-4xl font-light italic mb-6">Продуктът не е намерен</h1>
+          <h1 className="font-serif text-obsidian text-4xl font-light mb-6">Продуктът не е намерен</h1>
           <Link href="/collection" className="btn-primary">
             Към колекцията
           </Link>

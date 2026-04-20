@@ -92,7 +92,7 @@ export default function BrandStory() {
 
           {/* Floating quote block */}
           <div className="absolute bottom-8 left-8 right-8 z-10 border border-chalk/15 p-6 backdrop-blur-sm bg-obsidian/40">
-            <p className="font-serif text-chalk/80 italic text-base md:text-lg font-light leading-snug">
+            <p className="font-serif text-chalk/80 text-base md:text-lg font-light leading-snug">
               {t.trust.quote}
             </p>
             <p className="tracking-editorial text-[0.55rem] text-chalk/30 font-sans mt-3">

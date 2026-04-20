@@ -106,7 +106,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={lang === "bg" ? "Търсете продукт..." : "Search products..."}
-              className="flex-1 bg-transparent text-chalk font-serif font-light italic outline-none placeholder:text-chalk/20 caret-sand"
+              className="flex-1 bg-transparent text-chalk font-serif font-light outline-none placeholder:text-chalk/20 caret-sand"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 3rem)" }}
             />
             <Search size={18} strokeWidth={1.5} className="text-chalk/30 ml-4 flex-shrink-0" />
@@ -143,7 +143,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                       </div>
                       {/* Info */}
                       <div className="flex-1 min-w-0">
-                        <p className="font-serif font-light text-chalk italic leading-tight truncate"
+                        <p className="font-serif font-light text-chalk leading-tight truncate"
                           style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}>
                           {product.name}
                         </p>
@@ -160,7 +160,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                 </div>
               </>
             ) : (
-              <p className="font-serif italic text-chalk/30 mt-4" style={{ fontSize: "1.1rem" }}>
+              <p className="font-serif text-chalk/30 mt-4" style={{ fontSize: "1.1rem" }}>
                 {lang === "bg" ? "Няма намерени резултати." : "No results found."}
               </p>
             )}

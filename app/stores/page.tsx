@@ -125,7 +125,7 @@ function StoreCard({
       <div className="p-7 md:p-8">
         {/* Name */}
         <h3
-          className="font-serif font-light text-obsidian italic mb-5 leading-none"
+          className="font-serif font-light text-obsidian mb-5 leading-none"
           style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)" }}
         >
           {store.name}

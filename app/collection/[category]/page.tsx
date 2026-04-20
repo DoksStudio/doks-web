@@ -168,7 +168,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           </div>
         ) : (
           <div className="py-32 text-center">
-            <p className="font-serif italic text-warm-gray text-2xl mb-6">
+            <p className="font-serif text-warm-gray text-2xl mb-6">
               {lang === "bg" ? "Скоро предстои..." : "Coming soon..."}
             </p>
             <p className="font-sans text-stone text-sm mb-10">

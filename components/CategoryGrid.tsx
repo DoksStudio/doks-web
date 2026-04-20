@@ -114,7 +114,7 @@ export default function CategoryGrid() {
                         {cat.sub}
                       </p>
                       <h3
-                        className="font-serif text-chalk font-light italic leading-none mb-1.5 card-label"
+                        className="font-serif text-chalk font-light leading-none mb-1.5 card-label"
                         style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}
                       >
                         {cat.label}

@@ -66,7 +66,7 @@ export default function CartPage() {
 
       {/* Empty state */}
       <div className="flex flex-col items-center justify-center py-24 md:py-28 px-6 text-center border-b border-obsidian/8">
-        <p className="font-serif font-light italic text-warm-gray mb-3"
+        <p className="font-serif font-light text-warm-gray mb-3"
           style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)" }}>
           Количката е празна
         </p>
@@ -104,7 +104,7 @@ export default function CartPage() {
                 <div className="absolute inset-0 bg-obsidian/10 group-hover:bg-obsidian/0 transition-colors duration-500" />
               </div>
               <p className="tracking-editorial text-stone text-[0.55rem] font-sans mb-1">{item.category}</p>
-              <p className="font-serif font-light italic text-obsidian group-hover:opacity-60 transition-opacity duration-300"
+              <p className="font-serif font-light text-obsidian group-hover:opacity-60 transition-opacity duration-300"
                 style={{ fontSize: "1.1rem" }}>
                 {item.name}
               </p>

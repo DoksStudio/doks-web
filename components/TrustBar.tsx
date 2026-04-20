@@ -103,7 +103,7 @@ export default function TrustBar() {
         >
           <div className="w-10 h-px bg-sand" />
           <blockquote>
-            <p className="font-serif font-light italic text-obsidian leading-snug"
+            <p className="font-serif font-light text-obsidian leading-snug"
               style={{ fontSize: "clamp(1.25rem, 2.5vw, 2.25rem)", letterSpacing: "-0.01em" }}
             >
               {t.trust.quote}

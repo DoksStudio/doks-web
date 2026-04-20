@@ -56,7 +56,7 @@ body {
 .font-editorial {
   font-family: var(--font-cormorant);
   font-weight: 300;
-  font-style: italic;
+  font-style: normal;
 }
 
 .tracking-editorial {
