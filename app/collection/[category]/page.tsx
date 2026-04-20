@@ -89,7 +89,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-50"
+            placeholder="empty"
+            className="object-cover opacity-50 transition-opacity duration-700"
           />
         )}
 
