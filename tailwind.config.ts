@@ -21,8 +21,8 @@ const config: Config = {
         "white-rock": "#EAE0D2",
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Montserrat", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Montserrat", "system-ui", "sans-serif"],
       },
       fontSize: {
         "display-2xl": ["clamp(4rem, 10vw, 10rem)", { lineHeight: "0.9", letterSpacing: "-0.03em" }],

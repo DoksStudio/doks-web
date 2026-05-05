@@ -16,18 +16,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-obsidian">
+    <section className="relative h-[100dvh] min-h-[700px] w-full overflow-hidden bg-obsidian">
 
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/Web Photos/Photo4.jpg"
+          src="/Web Photos/Photo4.jpeg"
           alt="Doks Studio"
           fill
           priority
           sizes="100vw"
-          className={`object-cover object-[80%_center] md:object-[30%_center] transition-all duration-[2200ms] ease-out ${
-            loaded ? "scale-100 opacity-100" : "scale-[1.06] opacity-0"
+          className={`object-cover object-[20%_center] md:object-[30%_center] transition-opacity duration-[1200ms] ease-out ${
+            loaded ? "opacity-100" : "opacity-0"
           }`}
           onLoad={() => setLoaded(true)}
         />
@@ -41,16 +41,16 @@ export default function Hero() {
       {/* Oversized background text — decorative */}
       <div
         aria-hidden="true"
-        className={`absolute bottom-0 right-0 pointer-events-none select-none transition-all duration-[1800ms] ease-out ${
-          loaded ? "opacity-[0.04] translate-x-0" : "opacity-0 translate-x-12"
+        className={`absolute bottom-16 right-0 pointer-events-none select-none transition-all duration-[1800ms] ease-out ${
+          loaded ? "opacity-[0.12] translate-x-0" : "opacity-0 translate-x-12"
         }`}
         style={{ transitionDelay: "600ms" }}
       >
         <span
           className="font-serif text-chalk font-light leading-[0.8] block"
-          style={{ fontSize: "clamp(8rem, 22vw, 26rem)", letterSpacing: "-0.04em" }}
+          style={{ fontSize: "clamp(6rem, 17vw, 20rem)", letterSpacing: "-0.04em" }}
         >
-          DOKS
+          ДОКС
         </span>
       </div>
 

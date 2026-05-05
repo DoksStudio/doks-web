@@ -12,7 +12,7 @@ const suggestions = [
   { label: "Сака", href: "/collection/jackets" },
   { label: "Смарт Кежуъл", href: "/collection/smart-casual" },
   { label: "Аксесоари", href: "/collection/accessories" },
-  { label: "Sale", href: "/collection/sale" },
+  { label: "Намалени", href: "/collection/sale" },
 ];
 
 interface SearchOverlayProps {

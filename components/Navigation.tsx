@@ -111,14 +111,16 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile: lang toggle + search + cart + hamburger */}
+          {/* Mobile left: lang toggle */}
+          <button
+            onClick={toggleLang}
+            className={`flex lg:hidden tracking-editorial text-[0.575rem] font-sans font-medium transition-colors duration-300 ${textColor}`}
+          >
+            {lang === "bg" ? "EN" : "БГ"}
+          </button>
+
+          {/* Mobile right: search + cart + hamburger */}
           <div className="flex lg:hidden items-center gap-3 ml-auto">
-            <button
-              onClick={toggleLang}
-              className={`tracking-editorial text-[0.575rem] font-sans font-medium transition-colors duration-300 ${textColor}`}
-            >
-              {lang === "bg" ? "EN" : "БГ"}
-            </button>
             <button aria-label="Search" onClick={() => setSearchOpen(true)} className={`p-1 ${textColor}`}>
               <Search size={15} strokeWidth={1.5} />
             </button>

@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
+import NewsletterPopup from "@/components/NewsletterPopup";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -31,14 +32,14 @@ export const metadata: Metadata = {
     template: "%s — DOKS STUDIO",
   },
   description:
-    "31 години мъжка мода от България. Премиум костюми, официално и смарт-кежуъл облекло за съвременния мъж.",
+    "33 години мъжка мода от България. Премиум костюми, официално и смарт-кежуъл облекло за съвременния мъж.",
   keywords: ["мъжки костюми", "мъжко облекло", "България", "луксозно облекло", "мъжка мода", "Sofia"],
   openGraph: {
     type: "website",
     locale: "bg_BG",
     siteName: "DOKS STUDIO",
     title: "DOKS STUDIO — Безвременно Мъжко Облекло",
-    description: "31 години мъжка мода от България. Премиум костюми и официално облекло.",
+    description: "33 години мъжка мода от България. Премиум костюми и официално облекло.",
   },
 };
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           <Preloader />
           <CustomCursor />
+          <NewsletterPopup />
           <Navigation />
           <main>{children}</main>
           <Footer />

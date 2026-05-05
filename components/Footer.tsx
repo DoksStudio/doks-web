@@ -78,8 +78,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-chalk font-light tracking-[0.3em] uppercase block text-lg">DOKS</span>
-              <span className="tracking-[0.5em] text-[0.42rem] font-sans font-medium uppercase text-chalk/35 mt-0.5 block">STUDIO</span>
+              <span className="font-sans text-chalk font-medium tracking-[0.22em] uppercase block text-lg">ДОКС СТУДИО</span>
             </Link>
             <p className="font-sans text-chalk/35 text-xs leading-relaxed mb-6 max-w-[170px]">
               {t.footer.brandDesc}

@@ -10,9 +10,9 @@ export default function TrustBar() {
   const pillars = [t.trust.pillar1, t.trust.pillar2, t.trust.pillar3, t.trust.pillar4];
 
   const marqueeItems = [
-    "31 " + (t === (null as never) ? "" : t.trust.pillar1.title),
+    "33 " + (t === (null as never) ? "" : t.trust.pillar1.title),
     "100 000+ " + t.trust.pillar2.title,
-    "Sofia, Bulgaria — 1993",
+    "София, България — 1994",
     t.trust.pillar3.title,
     t.trust.pillar4.title,
     "Граф Игнатиев · Иван Шишман · Христо Белчев · Бул. Мадрид",

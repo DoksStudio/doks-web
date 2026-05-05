@@ -70,7 +70,7 @@ export default function BrandStory() {
           className="font-serif text-chalk font-light leading-none block"
           style={{ fontSize: "clamp(12rem, 30vw, 36rem)", letterSpacing: "-0.06em" }}
         >
-          1993
+          1994
         </span>
       </div>
 
@@ -145,7 +145,7 @@ export default function BrandStory() {
           >
             <div className="grid grid-cols-3 gap-6 mb-10">
               {[
-                { target: 31, suffix: "+", label: t.story.stat1.label },
+                { target: 33, suffix: "+", label: t.story.stat1.label },
                 { target: 100, suffix: "k+", label: t.story.stat2.label },
                 { target: 4, suffix: "", label: t.story.stat3.label },
               ].map((stat, i) => (
