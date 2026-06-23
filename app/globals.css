@@ -12,8 +12,8 @@
   --color-warm-gray: #6B6560;
   --color-light-stone: #E8E4DD;
 
-  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
-  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-cormorant: 'Montserrat', system-ui, sans-serif;
+  --font-inter: 'Montserrat', system-ui, sans-serif;
 
   --transition-base: 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-reveal: 800ms cubic-bezier(0.16, 1, 0.3, 1);
