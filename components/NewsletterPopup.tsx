@@ -13,7 +13,7 @@ export default function NewsletterPopup() {
 
   useEffect(() => {
     if (sessionStorage.getItem("popup_seen")) return;
-    const timer = setTimeout(() => setVisible(true), 15000);
+    const timer = setTimeout(() => setVisible(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
