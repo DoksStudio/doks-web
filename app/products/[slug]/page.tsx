@@ -42,9 +42,10 @@ function Accordion({
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const { slug } = params as { slug: string };
+  const decodedSlug = decodeURIComponent(slug);
   const { t } = useLanguage();
   const { products, loading } = useProducts();
-  const product = getProductBySlug(products, slug);
+  const product = getProductBySlug(products, decodedSlug);
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [activeImage, setActiveImage] = useState(0);
