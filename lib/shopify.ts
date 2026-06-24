@@ -38,7 +38,7 @@ const PRODUCTS_QUERY = `
           variants(first: 10) {
             edges { node { id title availableForSale } }
           }
-          collections(first: 5) {
+          collections(first: 10) {
             edges { node { handle title } }
           }
           tags
