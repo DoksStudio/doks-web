@@ -31,6 +31,8 @@ const COLLECTION_MAP: Record<string, string> = {
   blazers: "jackets",
   сака: "jackets",
   сако: "jackets",
+  якета: "jackets",
+  яке: "jackets",
   "smart-casual": "smart-casual",
   "smart casual": "smart-casual",
   smartcasual: "smart-casual",
