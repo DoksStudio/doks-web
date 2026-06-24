@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { products } from "@/lib/products";
 import ProductCard from "@/components/ui/ProductCard";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProducts } from "@/lib/useProducts";
 
 const categoryKeys = ["suits", "jackets", "smart-casual", "accessories"] as const;
 
 export default function CollectionPage() {
   const { t, lang } = useLanguage();
   const [active, setActive] = useState<string>("all");
+  const { products, loading } = useProducts();
 
   const categoryLabels: Record<string, string> = {
     all: lang === "bg" ? "Всички" : "All",
@@ -65,7 +66,13 @@ export default function CollectionPage() {
 
       {/* Grid */}
       <div className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
-        {filtered.length > 0 ? (
+        {loading ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="aspect-[3/4] bg-obsidian/5 animate-pulse" />
+            ))}
+          </div>
+        ) : filtered.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
             {filtered.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getProductBySlug, products, formatPrice } from "@/lib/products";
+import { getProductBySlug, formatPrice } from "@/lib/products";
+import { useProducts } from "@/lib/useProducts";
 import ProductCard from "@/components/ui/ProductCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDown, Plus, Minus, ZoomIn } from "lucide-react";
@@ -42,7 +43,8 @@ function Accordion({
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const { slug } = params as { slug: string };
   const { t } = useLanguage();
-  const product = getProductBySlug(slug);
+  const { products } = useProducts();
+  const product = getProductBySlug(products, slug);
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [activeImage, setActiveImage] = useState(0);

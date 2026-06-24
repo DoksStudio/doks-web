@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { X, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { products } from "@/lib/products";
+import { useProducts } from "@/lib/useProducts";
 
 const suggestions = [
   { label: "Костюми", href: "/collection/suits" },
@@ -24,6 +24,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const { lang } = useLanguage();
+  const { products } = useProducts();
 
   useEffect(() => {
     if (open) {

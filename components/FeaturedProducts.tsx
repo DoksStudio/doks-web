@@ -6,11 +6,13 @@ import { getFeaturedProducts } from "@/lib/products";
 import ProductCard from "@/components/ui/ProductCard";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProducts } from "@/lib/useProducts";
 
 export default function FeaturedProducts() {
   const { t } = useLanguage();
   const headerRef = useRef<HTMLDivElement>(null);
-  const products = getFeaturedProducts();
+  const { products: allProducts, loading } = useProducts();
+  const products = getFeaturedProducts(allProducts);
 
   useEffect(() => {
     const el = headerRef.current;
@@ -64,11 +66,19 @@ export default function FeaturedProducts() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
-          {products.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="aspect-[3/4] bg-obsidian/5 animate-pulse" />
+            ))}
+          </div>
+        ) : products.length > 0 ? (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
+            {products.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { products } from "@/lib/products";
 import ProductCard from "@/components/ui/ProductCard";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProducts } from "@/lib/useProducts";
 
 const categoryMeta: Record<string, {
   bg: string; en: string;
@@ -65,6 +65,7 @@ const categoryMeta: Record<string, {
 export default function CategoryPage({ params }: { params: { category: string } }) {
   const { category } = params;
   const { lang } = useLanguage();
+  const { products, loading } = useProducts();
 
   const meta = categoryMeta[category];
 
@@ -160,7 +161,13 @@ export default function CategoryPage({ params }: { params: { category: string } 
 
       {/* Grid */}
       <div className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
-        {filtered.length > 0 ? (
+        {loading ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="aspect-[3/4] bg-obsidian/5 animate-pulse" />
+            ))}
+          </div>
+        ) : filtered.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
             {filtered.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
