@@ -43,7 +43,7 @@ function Accordion({
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const { slug } = params as { slug: string };
   const { t } = useLanguage();
-  const { products } = useProducts();
+  const { products, loading } = useProducts();
   const product = getProductBySlug(products, slug);
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -53,6 +53,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const [addedToCart, setAddedToCart] = useState(false);
   const [zoomed, setZoomed] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+
+  if (loading) {
+    return <div className="min-h-screen bg-chalk" />;
+  }
 
   if (!product) {
     return (

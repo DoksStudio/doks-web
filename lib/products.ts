@@ -30,7 +30,9 @@ export function mapShopifyProduct(p: Record<string, unknown>): Product {
     ) ?? [];
 
   const collections =
-    (p.collections as { edges: { node: { handle: string } }[] })?.edges?.map((e) => e.node.handle) ?? [];
+    (p.collections as { edges: { node: { handle: string } }[] })?.edges
+      ?.map((e) => e.node.handle)
+      .filter((h) => h !== "frontpage" && h !== "home-page") ?? [];
 
   const tags = (p.tags as string[]) ?? [];
 
