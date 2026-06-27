@@ -9,7 +9,7 @@ export type Product = {
   details: string[];
   fabric: string;
   fit: string;
-  sizes: { label: string; available: boolean }[];
+  sizes: { label: string; available: boolean; variantId: string }[];
   images: { primary: string; secondary: string; gallery: string[] };
   tags: string[];
   featured: boolean;
@@ -63,7 +63,7 @@ export function mapShopifyProduct(p: Record<string, unknown>): Product {
 
   const variants =
     (p.variants as { edges: { node: { id: string; title: string; availableForSale: boolean } }[] })?.edges?.map(
-      (e) => ({ label: e.node.title, available: e.node.availableForSale })
+      (e) => ({ label: e.node.title, available: e.node.availableForSale, variantId: e.node.id })
     ) ?? [];
 
   const collections =

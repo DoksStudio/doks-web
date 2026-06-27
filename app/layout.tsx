@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { CartProvider } from "@/contexts/CartContext";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import CartDrawer from "@/components/CartDrawer";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -48,12 +50,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="bg" className={`${montserrat.variable} ${montserratSans.variable}`} suppressHydrationWarning>
       <body className="bg-chalk text-obsidian antialiased cursor-none">
         <LanguageProvider>
-          <Preloader />
-          <CustomCursor />
-          <NewsletterPopup />
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
+          <CartProvider>
+            <Preloader />
+            <CustomCursor />
+            <NewsletterPopup />
+            <Navigation />
+            <CartDrawer />
+            <main>{children}</main>
+            <Footer />
+          </CartProvider>
         </LanguageProvider>
       </body>
     </html>

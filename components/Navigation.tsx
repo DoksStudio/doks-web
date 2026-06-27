@@ -5,10 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useCart } from "@/contexts/CartContext";
 import SearchOverlay from "@/components/SearchOverlay";
 
 export default function Navigation() {
   const { lang, toggleLang, t } = useLanguage();
+  const { totalItems, openCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -106,9 +108,14 @@ export default function Navigation() {
             <button aria-label="Search" onClick={() => setSearchOpen(true)} className={`p-1 hover:opacity-50 transition-opacity ${textColor}`}>
               <Search size={15} strokeWidth={1.5} />
             </button>
-            <Link href="/cart" aria-label="Cart" className={`relative p-1 hover:opacity-50 transition-opacity ${textColor}`}>
+            <button onClick={openCart} aria-label="Cart" className={`relative p-1 hover:opacity-50 transition-opacity ${textColor}`}>
               <ShoppingBag size={15} strokeWidth={1.5} />
-            </Link>
+              {totalItems > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-obsidian text-chalk rounded-full text-[0.45rem] font-sans font-medium flex items-center justify-center leading-none">
+                  {totalItems > 9 ? "9+" : totalItems}
+                </span>
+              )}
+            </button>
           </div>
 
           {/* Mobile left: lang toggle */}
@@ -124,9 +131,14 @@ export default function Navigation() {
             <button aria-label="Search" onClick={() => setSearchOpen(true)} className={`p-1 ${textColor}`}>
               <Search size={15} strokeWidth={1.5} />
             </button>
-            <Link href="/cart" className={`p-1 ${textColor}`}>
+            <button onClick={openCart} className={`relative p-1 ${textColor}`}>
               <ShoppingBag size={15} strokeWidth={1.5} />
-            </Link>
+              {totalItems > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-obsidian text-chalk rounded-full text-[0.45rem] font-sans font-medium flex items-center justify-center leading-none">
+                  {totalItems > 9 ? "9+" : totalItems}
+                </span>
+              )}
+            </button>
             <button
               aria-label="Menu"
               onClick={() => setMenuOpen(true)}

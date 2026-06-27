@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProductBySlug, formatPrice } from "@/lib/products";
 import { useProducts } from "@/lib/useProducts";
+import { useCart } from "@/contexts/CartContext";
 import ProductCard from "@/components/ui/ProductCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDown, Plus, Minus, ZoomIn } from "lucide-react";
@@ -47,6 +48,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const { products, loading } = useProducts();
   const product = getProductBySlug(products, decodedSlug);
 
+  const { addItem, openCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -80,8 +82,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   const handleAddToCart = () => {
     if (!selectedSize) { setSizeError(true); setTimeout(() => setSizeError(false), 2500); return; }
+    const variant = product?.sizes.find((s) => s.label === selectedSize);
+    if (!variant?.variantId) return;
+    addItem({
+      variantId: variant.variantId,
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      currency: product.currency,
+      image: product.images.primary,
+      size: selectedSize,
+      quantity,
+      slug: product.slug,
+    });
     setAddedToCart(true);
-    setTimeout(() => setAddedToCart(false), 3000);
+    setTimeout(() => { setAddedToCart(false); openCart(); }, 400);
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {

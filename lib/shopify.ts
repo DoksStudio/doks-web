@@ -86,3 +86,34 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
 
   return data?.productByHandle ?? null;
 }
+
+export async function createCheckout(
+  lines: { variantId: string; quantity: number }[]
+): Promise<string | null> {
+  const mutation = `
+    mutation cartCreate($input: CartInput!) {
+      cartCreate(input: $input) {
+        cart { checkoutUrl }
+        userErrors { field message }
+      }
+    }
+  `;
+
+  const { data, errors } = await shopifyClient.request(mutation, {
+    variables: {
+      input: {
+        lines: lines.map((l) => ({
+          merchandiseId: l.variantId,
+          quantity: l.quantity,
+        })),
+      },
+    },
+  });
+
+  if (errors) {
+    console.error("Shopify cart error:", errors);
+    return null;
+  }
+
+  return data?.cartCreate?.cart?.checkoutUrl ?? null;
+}
