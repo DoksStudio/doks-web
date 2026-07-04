@@ -220,9 +220,20 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               >
                 {product.name}
               </h1>
-              <p className="font-serif font-light text-obsidian/80" style={{ fontSize: "1.5rem", letterSpacing: "-0.01em" }}>
-                {formatPrice(product.price, product.currency)}
-              </p>
+              {product.category === "sale" && product.compareAtPrice ? (
+                <div className="flex items-baseline gap-3">
+                  <p className="font-serif font-light text-red-600" style={{ fontSize: "1.5rem", letterSpacing: "-0.01em" }}>
+                    {formatPrice(product.price, product.currency)}
+                  </p>
+                  <p className="font-serif font-light text-stone line-through opacity-60" style={{ fontSize: "1.1rem" }}>
+                    {formatPrice(product.compareAtPrice, product.currency)}
+                  </p>
+                </div>
+              ) : (
+                <p className="font-serif font-light text-obsidian/80" style={{ fontSize: "1.5rem", letterSpacing: "-0.01em" }}>
+                  {formatPrice(product.price, product.currency)}
+                </p>
+              )}
             </div>
 
             <div className="w-10 h-px bg-light-stone mb-6" />

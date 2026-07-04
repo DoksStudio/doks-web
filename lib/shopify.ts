@@ -14,6 +14,9 @@ export interface ShopifyProduct {
   priceRange: {
     minVariantPrice: { amount: string; currencyCode: string };
   };
+  compareAtPriceRange: {
+    minVariantPrice: { amount: string; currencyCode: string };
+  };
   images: { edges: { node: { url: string; altText: string | null } }[] };
   variants: { edges: { node: { id: string; title: string; availableForSale: boolean } }[] };
   collections: { edges: { node: { handle: string; title: string } }[] };
@@ -30,6 +33,9 @@ const PRODUCTS_QUERY = `
           handle
           description
           priceRange {
+            minVariantPrice { amount currencyCode }
+          }
+          compareAtPriceRange {
             minVariantPrice { amount currencyCode }
           }
           images(first: 3) {
@@ -67,6 +73,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
       productByHandle(handle: $handle) {
         id title handle description
         priceRange { minVariantPrice { amount currencyCode } }
+        compareAtPriceRange { minVariantPrice { amount currencyCode } }
         images(first: 5) { edges { node { url altText } } }
         variants(first: 20) { edges { node { id title availableForSale } } }
         collections(first: 5) { edges { node { handle title } } }

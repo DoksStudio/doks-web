@@ -79,9 +79,20 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             </h3>
           </div>
           <div className="text-right mt-3 shrink-0">
-            <span className="font-serif text-obsidian text-base font-light">
-              {formatPrice(product.price, product.currency)}
-            </span>
+            {product.category === "sale" && product.compareAtPrice ? (
+              <div className="flex flex-col items-end gap-0.5">
+                <span className="font-serif text-stone text-sm font-light line-through opacity-60">
+                  {formatPrice(product.compareAtPrice, product.currency)}
+                </span>
+                <span className="font-serif text-red-600 text-base font-light">
+                  {formatPrice(product.price, product.currency)}
+                </span>
+              </div>
+            ) : (
+              <span className="font-serif text-obsidian text-base font-light">
+                {formatPrice(product.price, product.currency)}
+              </span>
+            )}
           </div>
         </div>
       </Link>

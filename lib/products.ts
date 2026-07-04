@@ -13,6 +13,7 @@ export type Product = {
   images: { primary: string; secondary: string; gallery: string[] };
   tags: string[];
   featured: boolean;
+  compareAtPrice?: number;
 };
 
 export function formatPrice(price: number, currency = "BGN"): string {
@@ -81,6 +82,12 @@ export function mapShopifyProduct(p: Record<string, unknown>): Product {
     (p.priceRange as { minVariantPrice: { amount: string; currencyCode: string } })
       ?.minVariantPrice?.currencyCode ?? "BGN";
 
+  const compareAtAmount = parseFloat(
+    (p.compareAtPriceRange as { minVariantPrice: { amount: string } } | undefined)
+      ?.minVariantPrice?.amount ?? "0"
+  );
+  const compareAtPrice = compareAtAmount > priceAmount ? compareAtAmount : undefined;
+
   const category = resolveCategory([...collections, ...tags]);
 
   return {
@@ -102,6 +109,7 @@ export function mapShopifyProduct(p: Record<string, unknown>): Product {
     },
     tags,
     featured: tags.includes("featured"),
+    compareAtPrice,
   };
 }
 
