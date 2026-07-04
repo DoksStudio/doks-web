@@ -35,25 +35,25 @@ export default function NewsletterPopup() {
   const texts = {
     bg: {
       eyebrow: "СПЕЦИАЛНА ОФЕРТА",
-      title: "-20% отстъпка",
-      subtitle: "Въведете имейла си и получете ваучер за 20% отстъпка от следващата поръчка.",
+      title: "-10% отстъпка",
+      subtitle: "Въведете имейла си и получете ваучер за 10% отстъпка от следващата поръчка.",
       placeholder: "Вашият имейл адрес",
       cta: "Получи ваучера",
       fine: "Без спам. Можете да се отпишете по всяко време.",
       successTitle: "Вашият ваучер е готов",
-      successCode: "ДОКС20",
+      successCode: "ДОКС10",
       successMsg: "Копирайте кода и го използвайте при следващата поръчка.",
       errorMsg: "Моля въведете валиден имейл.",
     },
     en: {
       eyebrow: "SPECIAL OFFER",
-      title: "20% off",
-      subtitle: "Enter your email and receive a voucher for 20% off your next order.",
+      title: "10% off",
+      subtitle: "Enter your email and receive a voucher for 10% off your next order.",
       placeholder: "Your email address",
       cta: "Get the voucher",
       fine: "No spam. Unsubscribe anytime.",
       successTitle: "Your voucher is ready",
-      successCode: "DOKS20",
+      successCode: "DOKS10",
       successMsg: "Copy the code and use it on your next order.",
       errorMsg: "Please enter a valid email.",
     },
@@ -86,7 +86,7 @@ export default function NewsletterPopup() {
           className="absolute top-0 right-0 font-sans font-medium text-chalk/[0.04] leading-none select-none pointer-events-none"
           style={{ fontSize: "clamp(6rem, 20vw, 10rem)", lineHeight: 1 }}
         >
-          20
+          10
         </div>
 
         <div className="px-8 py-10 relative z-10">
