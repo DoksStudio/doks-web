@@ -128,7 +128,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                   {results.map((product) => (
                     <Link
                       key={product.id}
-                      href={`/collection/${product.category.toLowerCase().replace(/ /g, "-")}/${product.slug}`}
+                      href={`/products/${product.slug}`}
                       onClick={onClose}
                       className="flex items-center gap-5 py-4 group hover:opacity-70 transition-opacity duration-200"
                     >
