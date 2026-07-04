@@ -233,9 +233,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="tracking-editorial text-[0.575rem] text-obsidian font-sans">{t.product.selectSize}</span>
-                <Link href="/size-guide" className="tracking-editorial text-[0.575rem] text-stone font-sans underline underline-offset-2 hover:text-obsidian transition-colors duration-200">
-                  {t.product.sizeGuide}
-                </Link>
               </div>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
@@ -282,9 +279,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               >
                 {addedToCart ? t.product.added : t.product.addToCart}
               </button>
-              <button className="w-full py-4 bg-transparent border border-light-stone text-obsidian font-sans tracking-editorial text-[0.625rem] font-medium hover:border-obsidian transition-all duration-300">
-                {t.product.bookFitting}
-              </button>
             </div>
 
             {/* Quick facts */}
@@ -299,22 +293,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
             {/* Accordions */}
             <div>
-              <Accordion title={acc.details} defaultOpen>
-                <ul className="space-y-2">
-                  {product.details.map((d) => (
-                    <li key={d} className="flex items-start gap-3">
-                      <span className="text-sand mt-0.5 flex-shrink-0 text-xs">—</span>
-                      <span className="font-sans text-warm-gray text-xs leading-relaxed">{d}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Accordion>
-              <Accordion title={acc.fabric}>
-                <p className="font-sans text-warm-gray text-xs leading-[1.9]">{product.fabric}</p>
-              </Accordion>
-              <Accordion title={acc.fit}>
-                <p className="font-sans text-warm-gray text-xs leading-[1.9]">{product.fit}</p>
-              </Accordion>
               <Accordion title={acc.shipping}>
                 <div className="space-y-3">
                   {[
