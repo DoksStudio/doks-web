@@ -98,9 +98,9 @@ export const translations = {
       },
       links: {
         collection: ["Всички парчета", "Костюми", "Сака & Блейзъри", "Смарт Кежуъл", "Аксесоари", "Новости"],
-        services: ["По поръчка", "Преправки", "Консултация", "Карти за подарък"],
-        company: ["Нашата история", "Занаят", "Луксбук", "Дневник", "Кариери"],
-        support: ["Размерна таблица", "Грижа за дрехите", "Доставка & Връщане", "Контакти", "ЧЗВ"],
+        services: ["По поръчка", "Преправки", "Консултация"],
+        company: ["Нашата история", "Занаят"],
+        support: ["Грижа за дрехите", "Доставка & Връщане", "Контакти"],
       },
       storeTitle: "Магазини",
       stores: [
@@ -268,9 +268,9 @@ export const translations = {
       },
       links: {
         collection: ["All Pieces", "Suits", "Jackets & Blazers", "Smart Casual", "Accessories", "New Arrivals"],
-        services: ["Made-to-Measure", "Alterations", "Consultation", "Gift Cards"],
-        company: ["Our Story", "Craftsmanship", "Lookbook", "Journal", "Careers"],
-        support: ["Size Guide", "Care Instructions", "Shipping & Returns", "Contact", "FAQ"],
+        services: ["Made-to-Measure", "Alterations", "Consultation"],
+        company: ["Our Story", "Craftsmanship"],
+        support: ["Care Instructions", "Shipping & Returns", "Contact"],
       },
       storeTitle: "Stores",
       stores: [
