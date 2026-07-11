@@ -22,6 +22,8 @@ export default function Footer() {
     support: ["/care", "/shipping", "/stores"],
   };
 
+  const legalHrefs = ["/privacy", "/terms", "/cookies"];
+
   return (
     <footer className="bg-obsidian text-chalk">
 
@@ -161,10 +163,10 @@ export default function Footer() {
           {t.footer.copyright}
         </p>
         <div className="flex items-center gap-5">
-          {t.footer.legal.map((item) => (
+          {t.footer.legal.map((item, i) => (
             <Link
               key={item}
-              href={`/${item.toLowerCase().replace(/ /g, "-")}`}
+              href={legalHrefs[i] ?? "#"}
               className="tracking-editorial text-[0.525rem] text-chalk/20 font-sans hover:text-chalk/50 transition-colors duration-300"
             >
               {item}
