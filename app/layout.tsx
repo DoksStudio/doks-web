@@ -9,6 +9,7 @@ import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
 import NewsletterPopup from "@/components/NewsletterPopup";
 import CartDrawer from "@/components/CartDrawer";
+import CookieBanner from "@/components/CookieBanner";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NewsletterPopup />
             <Navigation />
             <CartDrawer />
+            <CookieBanner />
             <main>{children}</main>
             <Footer />
           </CartProvider>
