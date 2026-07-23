@@ -9,7 +9,8 @@ export default function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("popup_seen")) return;
@@ -22,12 +23,28 @@ export default function NewsletterPopup() {
     sessionStorage.setItem("popup_seen", "1");
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email.includes("@")) { setError(true); return; }
-    setError(false);
-    setSubmitted(true);
-    sessionStorage.setItem("popup_seen", "1");
+    if (!email.includes("@")) {
+      setError(lang === "bg" ? "Моля въведете валиден имейл." : "Please enter a valid email.");
+      return;
+    }
+    setError(null);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setSubmitted(true);
+      sessionStorage.setItem("popup_seen", "1");
+    } catch {
+      setError(lang === "bg" ? "Нещо се обърка. Опитайте отново." : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (!visible) return null;
@@ -39,11 +56,11 @@ export default function NewsletterPopup() {
       subtitle: "Въведете имейла си и получете ваучер за 10% отстъпка от следващата поръчка.",
       placeholder: "Вашият имейл адрес",
       cta: "Получи ваучера",
+      ctaLoading: "Изпращане...",
       fine: "Без спам. Можете да се отпишете по всяко време.",
-      successTitle: "Вашият ваучер е готов",
-      successCode: "ДОКС10",
-      successMsg: "Копирайте кода и го използвайте при следващата поръчка.",
-      errorMsg: "Моля въведете валиден имейл.",
+      successTitle: "Проверете имейла си",
+      successMsg: "Изпратихме ви уникален ваучер за 10% отстъпка. Проверете входящата си поща.",
+      successFine: "Ако не намерите имейла, проверете папка Спам.",
     },
     en: {
       eyebrow: "SPECIAL OFFER",
@@ -51,11 +68,11 @@ export default function NewsletterPopup() {
       subtitle: "Enter your email and receive a voucher for 10% off your next order.",
       placeholder: "Your email address",
       cta: "Get the voucher",
+      ctaLoading: "Sending...",
       fine: "No spam. Unsubscribe anytime.",
-      successTitle: "Your voucher is ready",
-      successCode: "DOKS10",
-      successMsg: "Copy the code and use it on your next order.",
-      errorMsg: "Please enter a valid email.",
+      successTitle: "Check your email",
+      successMsg: "We've sent you a unique 10% off voucher. Please check your inbox.",
+      successFine: "Can't find it? Check your spam folder.",
     },
   };
 
@@ -92,12 +109,10 @@ export default function NewsletterPopup() {
         <div className="px-8 py-10 relative z-10">
           {!submitted ? (
             <>
-              {/* Eyebrow */}
               <p className="tracking-editorial text-sand text-[0.575rem] font-sans mb-4">
                 {t.eyebrow}
               </p>
 
-              {/* Title */}
               <h2
                 className="font-sans font-medium text-chalk leading-none mb-3"
                 style={{ fontSize: "clamp(2.5rem, 8vw, 3.5rem)", letterSpacing: "-0.02em" }}
@@ -105,28 +120,28 @@ export default function NewsletterPopup() {
                 {t.title}
               </h2>
 
-              {/* Subtitle */}
               <p className="font-sans text-chalk/50 text-sm leading-relaxed mb-8 max-w-[300px]">
                 {t.subtitle}
               </p>
 
-              {/* Form */}
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => { setEmail(e.target.value); setError(false); }}
+                  onChange={(e) => { setEmail(e.target.value); setError(null); }}
                   placeholder={t.placeholder}
-                  className="w-full bg-chalk/5 border border-chalk/15 text-chalk placeholder:text-chalk/25 font-sans text-sm px-4 py-3 outline-none focus:border-sand/60 transition-colors duration-200"
+                  disabled={loading}
+                  className="w-full bg-chalk/5 border border-chalk/15 text-chalk placeholder:text-chalk/25 font-sans text-sm px-4 py-3 outline-none focus:border-sand/60 transition-colors duration-200 disabled:opacity-50"
                 />
                 {error && (
-                  <p className="text-red-400 text-xs font-sans">{t.errorMsg}</p>
+                  <p className="text-red-400 text-xs font-sans">{error}</p>
                 )}
                 <button
                   type="submit"
-                  className="w-full bg-sand text-obsidian font-sans font-medium text-[0.7rem] tracking-editorial py-3.5 hover:bg-light-stone transition-colors duration-300"
+                  disabled={loading}
+                  className="w-full bg-sand text-obsidian font-sans font-medium text-[0.7rem] tracking-editorial py-3.5 hover:bg-light-stone transition-colors duration-300 disabled:opacity-60"
                 >
-                  {t.cta}
+                  {loading ? t.ctaLoading : t.cta}
                 </button>
               </form>
 
@@ -136,10 +151,18 @@ export default function NewsletterPopup() {
             </>
           ) : (
             <>
-              {/* Success state */}
               <p className="tracking-editorial text-sand text-[0.575rem] font-sans mb-6">
                 {t.eyebrow}
               </p>
+
+              {/* Email icon */}
+              <div className="w-12 h-12 border border-sand/30 flex items-center justify-center mb-6">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="19" height="15" rx="0.5" stroke="#C9A96E" strokeOpacity="0.6"/>
+                  <path d="M1 1L10 9L19 1" stroke="#C9A96E" strokeOpacity="0.6" strokeWidth="1"/>
+                </svg>
+              </div>
+
               <h2
                 className="font-sans font-medium text-chalk leading-none mb-4"
                 style={{ fontSize: "clamp(1.5rem, 5vw, 2rem)" }}
@@ -147,15 +170,12 @@ export default function NewsletterPopup() {
                 {t.successTitle}
               </h2>
 
-              {/* Voucher code */}
-              <div className="border border-sand/40 bg-sand/5 px-6 py-5 mb-4 text-center">
-                <p className="font-sans font-medium text-sand tracking-[0.3em] text-2xl">
-                  {t.successCode}
-                </p>
-              </div>
-
-              <p className="font-sans text-chalk/40 text-xs leading-relaxed">
+              <p className="font-sans text-chalk/50 text-sm leading-relaxed mb-3">
                 {t.successMsg}
+              </p>
+
+              <p className="font-sans text-chalk/25 text-xs leading-relaxed">
+                {t.successFine}
               </p>
             </>
           )}
