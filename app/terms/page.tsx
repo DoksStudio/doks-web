@@ -29,7 +29,7 @@ export default function TermsPage() {
             <h2 className="tracking-editorial text-[0.6rem] text-obsidian font-sans font-medium mb-5">ПРЕДМЕТ</h2>
             <div className="border-t border-light-stone pt-6 space-y-4">
               <p className="font-sans text-warm-gray text-sm leading-[1.9] font-light">
-                <strong className="text-obsidian font-medium">Чл. 1.</strong> Настоящите общи условия са предназначени за регулиране на отношенията между ДОКС СТУДИО ООД, ЕИК 831150504, със седалище и адрес на управление: БЪЛГАРИЯ, гр. София (1231), р-н Връбница, жк. НАДЕЖДА, бл. 607, вх. Б, ет. 3, ап. 33, наричано по-долу за краткост ДОСТАВЧИК, и клиентите, наричани по-долу ПОЛЗВАТЕЛИ, на платформата за електронна търговия Онлайн Магазин за Животински продукти, наричана по-долу „www.doks-studio.eu".
+                <strong className="text-obsidian font-medium">Чл. 1.</strong> Настоящите общи условия са предназначени за регулиране на отношенията между ДОКС СТУДИО ООД, ЕИК 831150504, със седалище и адрес на управление: БЪЛГАРИЯ, гр. София (1231), р-н Връбница, жк. НАДЕЖДА, бл. 607, вх. Б, ет. 3, ап. 33, наричано по-долу за краткост ДОСТАВЧИК, и клиентите, наричани по-долу ПОЛЗВАТЕЛИ, на платформата за електронна търговия Онлайн Магазин за облекло и мъжка конфекция, наричана по-долу „www.doks-studio.eu".
               </p>
             </div>
           </section>
@@ -71,7 +71,7 @@ export default function TermsPage() {
             <h2 className="tracking-editorial text-[0.6rem] text-obsidian font-sans font-medium mb-5">ХАРАКТЕРИСТИКИ НА ПЛАТФОРМАТА</h2>
             <div className="border-t border-light-stone pt-6 space-y-4">
               <p className="font-sans text-warm-gray text-sm leading-[1.9] font-light">
-                <strong className="text-obsidian font-medium">Чл. 3.</strong> Онлайн Магазин за животински продукти, e платформа за електронна търговия, достъпна на адрес в Интернет www.doks-studio.eu, чрез която Ползвателите имат възможност да сключват договори за покупко-продажба и доставка на предлаганите от Доставчика в платформата стоки, включително следното:
+                <strong className="text-obsidian font-medium">Чл. 3.</strong> Онлайн Магазин за облекло, e платформа за електронна търговия, достъпна на адрес в Интернет www.doks-studio.eu, чрез която Ползвателите имат възможност да сключват договори за покупко-продажба и доставка на предлаганите от Доставчика в платформата стоки, включително следното:
               </p>
               <ul className="space-y-2 pl-4">
                 {[
