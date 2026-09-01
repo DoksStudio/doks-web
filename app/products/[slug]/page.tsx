@@ -44,7 +44,7 @@ function Accordion({
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const { slug } = params as { slug: string };
   const decodedSlug = decodeURIComponent(slug);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { products, loading } = useProducts();
   const product = getProductBySlug(products, decodedSlug);
 
@@ -56,6 +56,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const [addedToCart, setAddedToCart] = useState(false);
   const [zoomed, setZoomed] = useState(false);
   const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+  const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
 
   if (loading) {
     return <div className="min-h-screen bg-chalk" />;
@@ -244,6 +245,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="tracking-editorial text-[0.575rem] text-obsidian font-sans">{t.product.selectSize}</span>
+                <button
+                  onClick={() => setSizeGuideOpen(true)}
+                  className="tracking-editorial text-[0.575rem] text-stone hover:text-obsidian font-sans underline underline-offset-2 transition-colors duration-200"
+                >
+                  {lang === "bg" ? "Таблица с размери" : "Size guide"}
+                </button>
               </div>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
@@ -340,6 +347,32 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
             {related.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
+          </div>
+        </div>
+      )}
+
+      {/* Size Guide Modal */}
+      {sizeGuideOpen && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
+          <div className="absolute inset-0 bg-obsidian/70 backdrop-blur-sm" onClick={() => setSizeGuideOpen(false)} />
+          <div className="relative bg-chalk border border-light-stone w-full max-w-lg z-10 p-8">
+            <button
+              onClick={() => setSizeGuideOpen(false)}
+              className="absolute top-4 right-4 tracking-editorial text-[0.575rem] text-stone hover:text-obsidian font-sans transition-colors duration-200"
+            >
+              ✕
+            </button>
+            <p className="tracking-editorial text-stone text-[0.6rem] font-sans mb-4">
+              {lang === "bg" ? "РАЗМЕРИ" : "SIZING"}
+            </p>
+            <h2 className="font-serif font-light text-obsidian mb-8" style={{ fontSize: "1.5rem", letterSpacing: "-0.015em" }}>
+              {lang === "bg" ? "Таблица с размери" : "Size Guide"}
+            </h2>
+            <p className="font-sans text-warm-gray text-sm leading-relaxed font-light">
+              {lang === "bg"
+                ? "Таблицата с размери ще бъде добавена скоро."
+                : "Size guide coming soon."}
+            </p>
           </div>
         </div>
       )}
