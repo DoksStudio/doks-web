@@ -49,27 +49,10 @@ const stores = [
       { days: "Пон – Събота", time: "10:30 – 19:30" },
       { days: "Неделя", time: "11:00 – 18:00" },
     ],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=80",
     lat: 42.6940,
     lng: 23.3195,
     mapsQuery: "ул.+Христо+Белчев+5+София+България",
-  },
-  {
-    id: 4,
-    name: "Бул. Мадрид",
-    tag: "",
-    address: "бул. Мадрид",
-    city: "София 1505",
-    phone: "0888 998 846",
-    hours: [
-      { days: "Пон – Пет", time: "10:30 – 19:30" },
-      { days: "Събота", time: "10:30 – 15:00" },
-      { days: "Неделя", time: "Затворено" },
-    ],
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=80",
-    lat: 42.7105,
-    lng: 23.2790,
-    mapsQuery: "бул.+Мадрид+София+Оборище+България",
   },
 ];
 
@@ -207,13 +190,13 @@ export default function StoresPage() {
           className="absolute right-8 top-1/2 -translate-y-1/2 font-serif font-light text-chalk/5 leading-none select-none pointer-events-none hidden lg:block"
           style={{ fontSize: "clamp(10rem, 22vw, 22rem)" }}
         >
-          04
+          03
         </span>
 
         {/* Breadcrumb */}
         <div className="absolute top-0 left-0 right-0 pt-24 px-6 md:px-10 lg:px-16">
           <span className="tracking-editorial text-[0.575rem] text-chalk/50 font-sans">
-            SOFIA, BULGARIA — 4 МАГАЗИНА
+            SOFIA, BULGARIA — 3 МАГАЗИНА
           </span>
         </div>
 
@@ -234,7 +217,7 @@ export default function StoresPage() {
           </div>
           <div className="text-right hidden md:block">
             <p className="font-serif font-light text-chalk/20 leading-none" style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
-              04
+              03
             </p>
             <p className="tracking-editorial text-chalk/30 text-[0.55rem] font-sans mt-1">МАГАЗИНА</p>
           </div>
