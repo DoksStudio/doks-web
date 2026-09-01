@@ -123,7 +123,7 @@ export const translations = {
       added: "✓ Добавено",
       bookFitting: "Резервирай проба",
       sizeError: "Моля, изберете размер",
-      shipping1: "Безплатна доставка над 200 лв.",
+      shipping1: "Безплатна доставка над 99.99 €",
       shipping2: "Безплатни преправки",
       shipping3: "30 дни връщане",
       accordion: {
@@ -293,7 +293,7 @@ export const translations = {
       added: "✓ Added to Cart",
       bookFitting: "Book a Fitting",
       sizeError: "Please select a size to continue",
-      shipping1: "Free shipping over 200 BGN",
+      shipping1: "Free shipping over 99.99 €",
       shipping2: "Free alterations",
       shipping3: "30-day returns",
       accordion: {

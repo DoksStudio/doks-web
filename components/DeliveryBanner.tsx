@@ -5,8 +5,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function DeliveryBanner() {
   const { lang } = useLanguage();
   const text = lang === "bg"
-    ? "БЕЗПЛАТНА ДОСТАВКА ЗА ПОРЪЧКИ НАД 99.99 € / 195.56 лв."
-    : "FREE DELIVERY ON ORDERS OVER 99.99 € / 195.56 BGN";
+    ? "БЕЗПЛАТНА ДОСТАВКА ЗА ПОРЪЧКИ НАД 99.99 €"
+    : "FREE DELIVERY ON ORDERS OVER 99.99 €";
 
   return (
     <div className="bg-obsidian py-3.5 overflow-hidden">

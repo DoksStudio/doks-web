@@ -3,9 +3,9 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const recommended = [
-  { name: "Meridian Two-Piece Suit", category: "Костюми", price: "1 290 BGN", href: "/collection/suits/meridian-two-piece-suit", image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" },
-  { name: "Riviera Sport Coat", category: "Сака", price: "890 BGN", href: "/collection/jackets/riviera-sport-coat", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" },
-  { name: "Lisbon Slim Trouser", category: "Смарт Кежуъл", price: "390 BGN", href: "/collection/smart-casual/lisbon-slim-trouser", image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=600&q=80" },
+  { name: "Meridian Two-Piece Suit", category: "Костюми", price: "1 290 €", href: "/collection/suits/meridian-two-piece-suit", image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" },
+  { name: "Riviera Sport Coat", category: "Сака", price: "890 €", href: "/collection/jackets/riviera-sport-coat", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" },
+  { name: "Lisbon Slim Trouser", category: "Смарт Кежуъл", price: "390 €", href: "/collection/smart-casual/lisbon-slim-trouser", image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=600&q=80" },
 ];
 
 export default function CartPage() {
