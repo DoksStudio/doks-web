@@ -370,8 +370,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </h2>
             <p className="font-sans text-warm-gray text-sm leading-relaxed font-light">
               {lang === "bg"
-                ? "Таблицата с размери ще бъде добавена скоро."
-                : "Size guide coming soon."}
+                ? "Моля, проверете последните снимки на този артикул — там ще намерите таблицата с размери."
+                : "Please check the last photos of this item — the size guide is included there."}
             </p>
           </div>
         </div>
