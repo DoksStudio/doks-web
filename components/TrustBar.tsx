@@ -15,7 +15,7 @@ export default function TrustBar() {
     "София, България — 1994",
     t.trust.pillar3.title,
     t.trust.pillar4.title,
-    "Граф Игнатиев · Иван Шишман · Христо Белчев · Бул. Мадрид",
+    "Граф Игнатиев · Иван Шишман · Христо Белчев",
   ];
 
   useEffect(() => {

@@ -15,7 +15,7 @@ const categoryMeta: Record<string, {
   suits: {
     bg: "Костюми",
     en: "Suits",
-    desc_bg: "Изцяло конструирани костюми от премиум италиански тъкани. Всяко парче е ушито на ръка.",
+    desc_bg: "Костюми с Full Canvas конструкция от премиум италиански тъкани. Всеки костюм е ушит на ръка.",
     desc_en: "Fully canvassed suits in premium Italian fabrics. Every piece cut and sewn by hand.",
     image: "/Web Photos/Photo3.jpg",
     num: "01",
@@ -47,7 +47,7 @@ const categoryMeta: Record<string, {
   sale: {
     bg: "Намалени артикули",
     en: "Sale",
-    desc_bg: "Избрани парчета на специални цени. Ограничени количества.",
+    desc_bg: "Избрани артикули на специални цени. Ограничени количества.",
     desc_en: "Selected pieces at special prices. Limited quantities.",
     image: "/Web Photos/Photo8.jpg",
     num: "05",
