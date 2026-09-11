@@ -353,20 +353,32 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
       {/* Size Guide Modal */}
       {sizeGuideOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-obsidian/70 backdrop-blur-sm" onClick={() => setSizeGuideOpen(false)} />
-          <div className="relative bg-chalk border border-light-stone w-full max-w-lg z-10 p-8">
-            <button
-              onClick={() => setSizeGuideOpen(false)}
-              className="absolute top-4 right-4 tracking-editorial text-[0.575rem] text-stone hover:text-obsidian font-sans transition-colors duration-200"
-            >
-              ✕
-            </button>
-            <p className="font-sans text-obsidian text-base leading-relaxed">
-              {lang === "bg"
-                ? "Моля, проверете последните снимки на този артикул — там ще намерите таблицата с размери."
-                : "Please check the last photos of this item — the size guide is included there."}
-            </p>
+        <div className="fixed inset-0 z-[200] flex items-center justify-center px-6">
+          <div className="absolute inset-0 bg-obsidian/55 backdrop-blur-sm" onClick={() => setSizeGuideOpen(false)} />
+          <div className="relative bg-chalk w-full max-w-sm z-10">
+            <div className="h-[2px] bg-sand" />
+            <div className="px-8 py-10">
+              <p className="tracking-editorial text-[0.575rem] text-stone font-sans mb-6">
+                {lang === "bg" ? "ТАБЛИЦА С РАЗМЕРИ" : "SIZE GUIDE"}
+              </p>
+              <p
+                className="font-serif font-light text-obsidian leading-snug mb-10"
+                style={{ fontSize: "1.25rem", letterSpacing: "-0.01em" }}
+              >
+                {lang === "bg"
+                  ? "Моля, проверете последните снимки на артикула — там ще намерите таблицата с размери."
+                  : "Please check the last photos of this item — the size guide is included there."}
+              </p>
+              <button
+                onClick={() => setSizeGuideOpen(false)}
+                className="flex items-center gap-3 group"
+              >
+                <span className="w-6 h-px bg-stone/40 group-hover:bg-obsidian transition-colors duration-300" />
+                <span className="tracking-editorial text-[0.575rem] text-stone group-hover:text-obsidian font-sans transition-colors duration-200">
+                  {lang === "bg" ? "ЗАТВОРИ" : "CLOSE"}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       )}
