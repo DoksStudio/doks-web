@@ -31,9 +31,6 @@ export default function Footer() {
       <div className="border-b border-chalk/10 px-6 md:px-10 lg:px-16 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-end">
           <div>
-            <p className="tracking-editorial text-sand/60 text-[0.6rem] font-sans mb-5">
-              The Doks Studio Edit
-            </p>
             <h3
               className="font-serif font-light text-chalk leading-none"
               style={{ fontSize: "clamp(2.25rem, 4.5vw, 4.5rem)", letterSpacing: "-0.025em" }}
@@ -44,6 +41,9 @@ export default function Footer() {
             </h3>
           </div>
           <div>
+            <p className="tracking-editorial text-[0.6rem] font-sans text-chalk/60 mb-2">
+              {t.footer.newsletterTitle}
+            </p>
             <p className="font-sans text-chalk/35 text-sm leading-relaxed mb-6 max-w-[320px]">
               {t.footer.newsletterDesc}
             </p>
