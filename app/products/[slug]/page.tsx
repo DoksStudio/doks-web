@@ -362,13 +362,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             >
               ✕
             </button>
-            <p className="tracking-editorial text-stone text-[0.6rem] font-sans mb-4">
-              {lang === "bg" ? "РАЗМЕРИ" : "SIZING"}
-            </p>
-            <h2 className="font-serif font-light text-obsidian mb-8" style={{ fontSize: "1.5rem", letterSpacing: "-0.015em" }}>
-              {lang === "bg" ? "Таблица с размери" : "Size Guide"}
-            </h2>
-            <p className="font-sans text-warm-gray text-sm leading-relaxed font-light">
+            <p className="font-sans text-obsidian text-base leading-relaxed">
               {lang === "bg"
                 ? "Моля, проверете последните снимки на този артикул — там ще намерите таблицата с размери."
                 : "Please check the last photos of this item — the size guide is included there."}
