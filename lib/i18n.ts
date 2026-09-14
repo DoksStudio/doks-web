@@ -7,6 +7,7 @@ export const translations = {
       suits: "Костюми",
       jackets: "Сака",
       smartCasual: "Смарт Кежуъл",
+      outerwear: "Връхни облекла",
       about: "За нас",
       stores: "Магазини",
       newArrivals: "Новости",
@@ -32,6 +33,7 @@ export const translations = {
       jackets: { label: "Сака", sub: "Спортно и Официално", desc: "От блейзъри до палта" },
       smartCasual: { label: "Смарт Кежуъл", sub: "Изискана Лекота", desc: "Панталони, пуловери, ризи" },
       accessories: { label: "Аксесоари", sub: "Детайлите", desc: "Вратовръзки, кърпички, колани" },
+      outerwear: { label: "Връхни облекла", sub: "Якета & Палта", desc: "Якета, палта и шлифери" },
       sale: { label: "Намалени артикули", sub: "Специални цени", desc: "Ограничени количества" },
     },
     story: {
@@ -98,7 +100,7 @@ export const translations = {
         support: "Поддръжка",
       },
       links: {
-        collection: ["Всички артикули", "Костюми", "Сака & Блейзъри", "Смарт Кежуъл", "Аксесоари", "Новости"],
+        collection: ["Всички артикули", "Костюми", "Сака & Блейзъри", "Смарт Кежуъл", "Аксесоари", "Връхни облекла", "Новости"],
         services: ["Made to Measure", "Корекции", "Консултация"],
         company: ["Нашата история", "Занаят"],
         support: ["Грижа за дрехите", "Доставка & Връщане", "Контакти"],
@@ -177,6 +179,7 @@ export const translations = {
       suits: "Suits",
       jackets: "Jackets",
       smartCasual: "Smart Casual",
+      outerwear: "Outerwear",
       about: "About",
       stores: "Stores",
       newArrivals: "New Arrivals",
@@ -202,6 +205,7 @@ export const translations = {
       jackets: { label: "Jackets", sub: "Sport & Formal", desc: "From blazers to overcoats" },
       smartCasual: { label: "Smart Casual", sub: "Refined Ease", desc: "Trousers, knitwear, shirts" },
       accessories: { label: "Accessories", sub: "The Details", desc: "Ties, pocket squares, belts" },
+      outerwear: { label: "Outerwear", sub: "Jackets & Coats", desc: "Jackets, coats, overcoats" },
       sale: { label: "Sale", sub: "Special Prices", desc: "Limited quantities" },
     },
     story: {
@@ -268,7 +272,7 @@ export const translations = {
         support: "Support",
       },
       links: {
-        collection: ["All Pieces", "Suits", "Jackets & Blazers", "Smart Casual", "Accessories", "New Arrivals"],
+        collection: ["All Pieces", "Suits", "Jackets & Blazers", "Smart Casual", "Accessories", "Outerwear", "New Arrivals"],
         services: ["Made-to-Measure", "Alterations", "Consultation"],
         company: ["Our Story", "Craftsmanship"],
         support: ["Care Instructions", "Shipping & Returns", "Contact"],

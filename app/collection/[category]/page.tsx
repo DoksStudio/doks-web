@@ -44,13 +44,21 @@ const categoryMeta: Record<string, {
     image: "/Web Photos/Photo7.jpg",
     num: "04",
   },
+  outerwear: {
+    bg: "Връхни облекла",
+    en: "Outerwear",
+    desc_bg: "Якета, палта и шлифери за всеки сезон.",
+    desc_en: "Jackets, coats and overcoats for every season.",
+    image: "/Web Photos/Photo2.jpg",
+    num: "05",
+  },
   sale: {
     bg: "Намалени артикули",
     en: "Sale",
     desc_bg: "Избрани артикули на специални цени. Ограничени количества.",
     desc_en: "Selected pieces at special prices. Limited quantities.",
     image: "/Web Photos/Photo8.jpg",
-    num: "05",
+    num: "06",
   },
   new: {
     bg: "Новости",
@@ -58,7 +66,7 @@ const categoryMeta: Record<string, {
     desc_bg: "Последните постъпления в Докс Студио.",
     desc_en: "The latest arrivals at Doks Studio.",
     image: "/Web Photos/Photo4.jpg",
-    num: "06",
+    num: "07",
   },
 };
 

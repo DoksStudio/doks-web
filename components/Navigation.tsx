@@ -38,6 +38,7 @@ export default function Navigation() {
     { label: t.nav.suits, href: "/collection/suits" },
     { label: t.nav.smartCasual, href: "/collection/smart-casual" },
     { label: t.nav.jackets, href: "/collection/jackets" },
+    { label: t.nav.outerwear, href: "/collection/outerwear" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.stores, href: "/stores" },
     { label: t.nav.sale, href: "/collection/sale", sale: true },

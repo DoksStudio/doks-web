@@ -5,7 +5,7 @@ import ProductCard from "@/components/ui/ProductCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useProducts } from "@/lib/useProducts";
 
-const categoryKeys = ["suits", "jackets", "smart-casual", "accessories"] as const;
+const categoryKeys = ["suits", "jackets", "smart-casual", "accessories", "outerwear"] as const;
 
 export default function CollectionPage() {
   const { t, lang } = useLanguage();
@@ -18,6 +18,7 @@ export default function CollectionPage() {
     jackets: t.categories.jackets.label,
     "smart-casual": t.categories.smartCasual.label,
     accessories: t.categories.accessories.label,
+    outerwear: t.categories.outerwear.label,
   };
 
   const filtered =

@@ -12,6 +12,7 @@ const suggestions = [
   { label: "Сака", href: "/collection/jackets" },
   { label: "Смарт Кежуъл", href: "/collection/smart-casual" },
   { label: "Аксесоари", href: "/collection/accessories" },
+  { label: "Връхни облекла", href: "/collection/outerwear" },
   { label: "Намалени", href: "/collection/sale" },
 ];
 
@@ -50,6 +51,7 @@ export default function SearchOverlay({ open, onClose }: SearchOverlayProps) {
     jackets: "сака",
     "smart-casual": "смарт кежуъл",
     accessories: "аксесоари",
+    outerwear: "връхни облекла",
     sale: "намалени",
     new: "новости",
   };
