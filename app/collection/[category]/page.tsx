@@ -15,7 +15,7 @@ const categoryMeta: Record<string, {
   suits: {
     bg: "Костюми",
     en: "Suits",
-    desc_bg: "Костюми с Full Canvas конструкция от премиум италиански тъкани. Всеки костюм е ушит на ръка.",
+    desc_bg: "Отлично качество на отлична цена. Предимство на естествените материи. Разнообразие от модели.",
     desc_en: "Fully canvassed suits in premium Italian fabrics. Every piece cut and sewn by hand.",
     image: "/Web Photos/Photo3.jpg",
     num: "01",
