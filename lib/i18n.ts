@@ -101,7 +101,7 @@ export const translations = {
       },
       links: {
         collection: ["Всички артикули", "Костюми", "Сака & Блейзъри", "Смарт Кежуъл", "Аксесоари", "Връхни облекла", "Новости"],
-        services: ["Made to Measure", "Корекции", "Консултация"],
+        services: ["Облекла по поръчка (Made to measure)", "Корекции"],
         company: ["Нашата история", "Занаят"],
         support: ["Грижа за дрехите", "Доставка & Връщане", "Контакти"],
       },
@@ -273,7 +273,7 @@ export const translations = {
       },
       links: {
         collection: ["All Pieces", "Suits", "Jackets & Blazers", "Smart Casual", "Accessories", "Outerwear", "New Arrivals"],
-        services: ["Made-to-Measure", "Alterations", "Consultation"],
+        services: ["Made to Measure", "Alterations"],
         company: ["Our Story", "Craftsmanship"],
         support: ["Care Instructions", "Shipping & Returns", "Contact"],
       },

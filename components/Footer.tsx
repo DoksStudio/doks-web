@@ -17,7 +17,7 @@ export default function Footer() {
 
   const footerLinkHrefs = {
     collection: ["/collection", "/collection/suits", "/collection/jackets", "/collection/smart-casual", "/collection/accessories", "/collection/outerwear", "/collection/new"],
-    services: ["/stores", "/stores", "/stores"],
+    services: ["/made-to-measure", "/alterations"],
     company: ["/about", "/craftsmanship"],
     support: ["/care", "/shipping", "/stores"],
   };
