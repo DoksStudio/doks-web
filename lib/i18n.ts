@@ -102,12 +102,12 @@ export const translations = {
       links: {
         collection: ["Всички артикули", "Костюми", "Сака & Блейзъри", "Смарт Кежуъл", "Аксесоари", "Връхни облекла", "Новости"],
         services: ["Облекла по поръчка (Made to measure)", "Корекции"],
-        company: ["Нашата история", "Занаят"],
+        company: ["Нашата история"],
         support: ["Грижа за дрехите", "Доставка & Връщане", "Контакти"],
       },
       storeTitle: "Магазини",
       stores: [
-        { name: "Граф Игнатиев", desc: "Централен офис" },
+        { name: "Граф Игнатиев", desc: "" },
         { name: "Иван Шишман", desc: "" },
         { name: "Христо Белчев", desc: "" },
       ],
@@ -274,12 +274,12 @@ export const translations = {
       links: {
         collection: ["All Pieces", "Suits", "Jackets & Blazers", "Smart Casual", "Accessories", "Outerwear", "New Arrivals"],
         services: ["Made to Measure", "Alterations"],
-        company: ["Our Story", "Craftsmanship"],
+        company: ["Our Story"],
         support: ["Care Instructions", "Shipping & Returns", "Contact"],
       },
       storeTitle: "Stores",
       stores: [
-        { name: "Graf Ignatiev", desc: "Head office" },
+        { name: "Graf Ignatiev", desc: "" },
         { name: "Ivan Shishman", desc: "" },
         { name: "Hristo Belchev", desc: "" },
       ],

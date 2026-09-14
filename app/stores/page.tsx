@@ -9,7 +9,7 @@ const stores = [
   {
     id: 1,
     name: "Граф Игнатиев",
-    tag: "Централен офис",
+    tag: "",
     address: "ул. Граф Игнатиев 64-66",
     city: "София 1142",
     phone: "0888 809 780",
@@ -263,6 +263,20 @@ export default function StoresPage() {
           />
         </div>
 
+      </section>
+
+      {/* Contact */}
+      <section className="px-6 md:px-10 lg:px-16 pb-28 md:pb-36 max-w-5xl mx-auto border-t border-obsidian/8 pt-12">
+        <p className="tracking-editorial text-stone text-[0.625rem] font-sans mb-4">
+          КОНТАКТ
+        </p>
+        <a
+          href="mailto:office@doks-studio.eu"
+          className="font-serif font-light text-obsidian hover:opacity-50 transition-opacity duration-300"
+          style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", letterSpacing: "-0.01em" }}
+        >
+          office@doks-studio.eu
+        </a>
       </section>
     </div>
   );
