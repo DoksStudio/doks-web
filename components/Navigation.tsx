@@ -59,11 +59,11 @@ export default function Navigation() {
 
           {/* Desktop left links */}
           <div className="hidden lg:flex items-center gap-7 flex-1">
-            {navLinks.slice(0, 3).map((link) => (
+            {navLinks.slice(0, 4).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
+                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium whitespace-nowrap transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
               >
                 {link.label}
               </Link>
@@ -85,11 +85,11 @@ export default function Navigation() {
 
           {/* Desktop right links + actions */}
           <div className="hidden lg:flex items-center gap-7 flex-1 justify-end">
-            {navLinks.slice(3).map((link) => (
+            {navLinks.slice(4).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
+                className={`nav-link tracking-editorial text-[0.6rem] font-sans font-medium whitespace-nowrap transition-colors duration-300 ${"sale" in link && link.sale ? "text-red-600 hover:text-red-400" : textColor}`}
               >
                 {link.label}
               </Link>

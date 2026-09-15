@@ -12,6 +12,7 @@ const categoryImages = {
   smartCasual: "/Web Photos/Photo6.jpg",
   accessories: "/Web Photos/Photo7.jpg",
   sale: "/Web Photos/Photo8.jpg",
+  outerwear: "/Web Photos/Photo5.jpg", // placeholder — replace when client sends outerwear photo
 };
 
 export default function CategoryGrid() {
@@ -24,6 +25,7 @@ export default function CategoryGrid() {
     { id: "smartCasual", ...t.categories.smartCasual, href: "/collection/smart-casual", image: categoryImages.smartCasual, col: "lg:col-span-1" },
     { id: "accessories", ...t.categories.accessories, href: "/collection/accessories", image: categoryImages.accessories, col: "lg:col-span-1" },
     { id: "sale", ...t.categories.sale, href: "/collection/sale", image: categoryImages.sale, col: "lg:col-span-1" },
+    { id: "outerwear", ...t.categories.outerwear, href: "/collection/outerwear", image: categoryImages.outerwear, col: "lg:col-span-3" },
   ];
 
   useEffect(() => {
@@ -70,13 +72,15 @@ export default function CategoryGrid() {
 
       {/* Grid */}
       <div className="px-6 md:px-10 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-3 md:gap-4" style={{ minHeight: "680px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-3 md:gap-4" style={{ minHeight: "680px" }}>
           {categories.map((cat, i) => (
             <Link
               key={cat.id}
               href={cat.href}
               className={`category-card block overflow-hidden bg-charcoal ${cat.col} ${
-                cat.id === "suits" ? "aspect-[3/4] md:aspect-auto" : "aspect-[4/3]"
+                cat.id === "suits" ? "aspect-[3/4] md:aspect-auto" :
+                cat.id === "outerwear" ? "aspect-[4/3] lg:aspect-[3/1]" :
+                "aspect-[4/3]"
               }`}
             >
               <div
