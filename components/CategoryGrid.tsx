@@ -20,12 +20,12 @@ export default function CategoryGrid() {
   const sectionRef = useRef<HTMLElement>(null);
 
   const categories = [
-    { id: "suits", ...t.categories.suits, href: "/collection/suits", image: categoryImages.suits, col: "lg:col-span-1 lg:row-span-2" },
+    { id: "suits", ...t.categories.suits, href: "/collection/suits", image: categoryImages.suits, col: "lg:col-span-1" },
     { id: "jackets", ...t.categories.jackets, href: "/collection/jackets", image: categoryImages.jackets, col: "lg:col-span-1" },
     { id: "smartCasual", ...t.categories.smartCasual, href: "/collection/smart-casual", image: categoryImages.smartCasual, col: "lg:col-span-1" },
     { id: "accessories", ...t.categories.accessories, href: "/collection/accessories", image: categoryImages.accessories, col: "lg:col-span-1" },
     { id: "sale", ...t.categories.sale, href: "/collection/sale", image: categoryImages.sale, col: "lg:col-span-1" },
-    { id: "outerwear", ...t.categories.outerwear, href: "/collection/outerwear", image: categoryImages.outerwear, col: "lg:col-span-3" },
+    { id: "outerwear", ...t.categories.outerwear, href: "/collection/outerwear", image: categoryImages.outerwear, col: "lg:col-span-1" },
   ];
 
   useEffect(() => {
@@ -72,14 +72,12 @@ export default function CategoryGrid() {
 
       {/* Grid */}
       <div className="px-6 md:px-10 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-3 md:gap-4" style={{ minHeight: "680px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {categories.map((cat, i) => (
             <Link
               key={cat.id}
               href={cat.href}
               className={`category-card block overflow-hidden bg-charcoal ${cat.col} ${
-                cat.id === "suits" ? "aspect-[3/4] md:aspect-auto" :
-                cat.id === "outerwear" ? "aspect-[4/3] lg:aspect-[3/1]" :
                 "aspect-[4/3]"
               }`}
             >

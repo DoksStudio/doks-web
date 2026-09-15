@@ -147,7 +147,7 @@ export default function BrandStory() {
               {[
                 { target: 33, suffix: "+", label: t.story.stat1.label },
                 { target: 100, suffix: "k+", label: t.story.stat2.label },
-                { target: 4, suffix: "", label: t.story.stat3.label },
+                { target: 3, suffix: "", label: t.story.stat3.label },
               ].map((stat, i) => (
                 <div key={i}>
                   <span
