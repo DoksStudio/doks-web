@@ -24,8 +24,8 @@ export default function CategoryGrid() {
     { id: "jackets", ...t.categories.jackets, href: "/collection/jackets", image: categoryImages.jackets, col: "lg:col-span-1" },
     { id: "smartCasual", ...t.categories.smartCasual, href: "/collection/smart-casual", image: categoryImages.smartCasual, col: "lg:col-span-1" },
     { id: "accessories", ...t.categories.accessories, href: "/collection/accessories", image: categoryImages.accessories, col: "lg:col-span-1" },
-    { id: "sale", ...t.categories.sale, href: "/collection/sale", image: categoryImages.sale, col: "lg:col-span-1" },
     { id: "outerwear", ...t.categories.outerwear, href: "/collection/outerwear", image: categoryImages.outerwear, col: "lg:col-span-1" },
+    { id: "sale", ...t.categories.sale, href: "/collection/sale", image: categoryImages.sale, col: "lg:col-span-1" },
   ];
 
   useEffect(() => {
